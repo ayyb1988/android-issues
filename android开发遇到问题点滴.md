@@ -2404,7 +2404,7 @@ android:dashGap 表示'-'横线之间的距离
 #####233. GestureOverlayView
 
 #####234.Animation lInAnim = AnimationUtils.loadAnimation(mActivity, R.anim.push_left_in);
-#####235.  使用volley时，无法看到详细的错误信息。
+#####235.  使用volley 错误时，无法看到详细的信息。
 可以有两种方式处理
 
 **方法1**.抓包  通过Fiddler抓包，在ubuntu系统下通过mitmproty来抓包。或者android4.4chrome浏览器--工具--检查设备来抓包。
