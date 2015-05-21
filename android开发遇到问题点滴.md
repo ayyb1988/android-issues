@@ -2404,3 +2404,47 @@ android:dashGap 表示'-'横线之间的距离
 #####233. GestureOverlayView
 
 #####234.Animation lInAnim = AnimationUtils.loadAnimation(mActivity, R.anim.push_left_in);
+#####235.  使用volley时，无法看到详细的错误信息。
+可以有两种方式处理
+**方法1**.抓包  通过Fiddler抓包，在ubuntu系统下通过mitmproty来抓包。或者android4.4chrome浏览器--工具--检查设备来抓包。
+**方法2**.
+参考 [Android: How handle message error from the server using Volley?](http://stackoverflow.com/questions/21867929/android-how-handle-message-error-from-the-server-using-volley)
+在gsonrequest中重写parseNetworkError 如下：
+//In your extended request class 
+```
+@Override 
+protected VolleyError parseNetworkError(VolleyError volleyError){
+        if(volleyError.networkResponse != null && volleyError.networkResponse.data != null){
+                VolleyError error = new VolleyError(new String(volleyError.networkResponse.data));
+                volleyError = error;
+            } 
+ 
+        return volleyError;
+    } 
+} 
+```
+还要提示一点排查错误信息可以通过androidstudio的筛选 error volley。来直观的看到错误的状态码。
+NetworkError
+ClientError
+ServerError
+ AuthFailureError
+ ParseError
+ NoConnectionError
+ TimeoutError
+ 
+ **知其然，还要知其所以然**
+ BasicNetwork.java 中函数 performRequest执行错误时会抛出错误。
+ 	throw new ServerError(networkResponse);
+ 
+ networkResponse的类如下：
+ public class NetworkResponse {
+    public final int statusCode;
+    public final byte[] data;
+    public final Map<String, String> headers;
+    public final boolean notModified;
+    ......
+    }
+ 所以重写gsongrequest中的 方法parseNetworkError。通过networkResponse的data获得更详细的错误信息信息。
+ 
+ 
+
