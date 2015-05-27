@@ -2449,5 +2449,8 @@ ServerError
     }
  所以重写gsongrequest中的 方法parseNetworkError。通过networkResponse的data获得更详细的错误信息信息。
  
- 
+#####236. url编码
+遇到一个很奇怪的问题，同一个url在手机端请求 返回400【页面不存在】 而把这个url放在pc浏览器请求却是好的。
+最后发现是url中有个空格 。在app上没有进行url.encode 导致。至于pc上请求没问题是自动做了url编码处理。
+切记 请求的url有特殊字符 如空格 加号等，一定要url编码。
 
