@@ -2467,13 +2467,15 @@ android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id
         imm.hideSoftInputFromWindow(et_content.getWindowToken(), 0);
 
 #####239. 代码混淆导致问题，快速定位
+在代码混淆打包时，屏蔽了用到的第三方库，以及常规的android混淆屏蔽，但生成的apk，运行还是会崩溃。事出必有因，后来分析找到原因是**使用greendao自动生成的java-gen下package中的内容没有屏蔽代码混淆，导致存储数据库时，报**a(SourceFile:) NullPointerException ****
+混淆打包apk，运行崩溃 总结如下：
+
 我们在打包时，debug版本没问题，但混淆后release版本有时会出现异常崩溃，
 比如：**a(SourceFile:) NullPointerException **
 
 针对这种情况，可以通过抓UncaughtExceptionHandler崩溃日志或者第三方比如云测工具查看崩溃的原因。在androidstudio下还有一种更好的方式。
 
-在androidstudio中可以设置debug下也混淆，可以快速定位混淆导致的问题 [即在debug下也混淆]
-设置如下
+在androidstudio中可以设置debug下也混淆，通过android log直观的、快速的定位问题所在
 
 ```
  signingConfigs {
