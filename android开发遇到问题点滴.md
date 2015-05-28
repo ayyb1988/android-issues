@@ -2467,10 +2467,14 @@ android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id
         imm.hideSoftInputFromWindow(et_content.getWindowToken(), 0);
 
 #####239. 代码混淆导致问题，快速定位
-在代码混淆时，我们debug版本没问题，但混淆后release版本出现异常崩溃，如下
-代码混淆 a(SourceFile:)  NullPointerException
-针对这种情况，在androidstudio中可以设置debug下也混淆，可以快速定位混淆导致的问题
-设置如下[即在debug下也混淆]
+我们在打包时，debug版本没问题，但混淆后release版本有时会出现异常崩溃，
+比如：**a(SourceFile:) NullPointerException **
+
+针对这种情况，可以通过抓UncaughtExceptionHandler崩溃日志或者第三方比如云测工具查看崩溃的原因。在androidstudio下还有一种更好的方式。
+
+在androidstudio中可以设置debug下也混淆，可以快速定位混淆导致的问题 [即在debug下也混淆]
+设置如下
+
 ```
  signingConfigs {
             release {
