@@ -2454,3 +2454,54 @@ ServerError
 最后发现是url中有个空格 。在app上没有进行url.encode 导致。至于pc上请求没问题是自动做了url编码处理。
 切记 请求的url有特殊字符 如空格 加号等，一定要url编码。
 
+
+#####237. How to add a header to a listView which is inside SwipeRefreshLayout?
+http://stackoverflow.com/questions/27048416/how-to-add-a-header-to-a-listview-which-is-inside-swiperefreshlayout
+https://code.google.com/p/android/issues/detail?id=80227
+
+android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id/listview}
+
+
+#####238. 定义键盘 会遇到“当按返回键界面退出，但虚拟键盘没有消失的现象”针对这个问题，可以在onpause中强制隐藏它。代码如下。
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(et_content.getWindowToken(), 0);
+
+#####239. 代码混淆导致问题，快速定位
+在代码混淆时，我们debug版本没问题，但混淆后release版本出现异常崩溃，如下
+代码混淆 a(SourceFile:)  NullPointerException
+针对这种情况，在androidstudio中可以设置debug下也混淆，可以快速定位混淆导致的问题
+设置如下[即在debug下也混淆]
+```
+ signingConfigs {
+            release {
+
+            }
+
+            debug{
+
+            }
+   }
+
+    }
+
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release  //使用上述签名信息
+
+         }
+        }
+        debug {
+            minifyEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+```
