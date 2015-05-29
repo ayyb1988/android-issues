@@ -2458,6 +2458,7 @@ ServerError
 #####237. How to add a header to a listView which is inside SwipeRefreshLayout?
 http://stackoverflow.com/questions/27048416/how-to-add-a-header-to-a-listview-which-is-inside-swiperefreshlayout
 https://code.google.com/p/android/issues/detail?id=80227
+上述是2014年12月份报的android自身 bug。先已经修改
 
 android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id/listview}
 
