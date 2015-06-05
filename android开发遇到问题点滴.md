@@ -2512,3 +2512,6 @@ android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id
         }
     }
 ```
+#####240 通过gif展示一个效果是否直观，Ubuntu平台gif动画录制工具可以使用命令行，录制的效果很好，并且录制gif大小很小。
+byzanz-record --duration=30 --x=0 --y=50 --width=500  out.gif
+参数说明 --duration 录制的时长  --x录制开始的x坐标   --y录制开始的y坐标 --width 宽度  out.gif 输出文件名
