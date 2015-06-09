@@ -2515,3 +2515,39 @@ android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id
 #####240 通过gif展示一个效果是否直观，Ubuntu平台gif动画录制工具可以使用命令行，录制的效果很好，并且录制gif大小很小。
 byzanz-record --duration=30 --x=0 --y=50 --width=500  out.gif
 参数说明 --duration 录制的时长  --x录制开始的x坐标   --y录制开始的y坐标 --width 宽度  out.gif 输出文件名
+
+#####241.微信开放平台申请流程  http://bbs.mob.com/thread-95-1-4.html
+命令操作如下
+	
+keytool -list -keystore keystore文件路径 得到对应app的秘钥  把:去掉，大写转小写即可。
+
+#####242.编译ijkplayer时，报错 NDK r10: Fix make-standalone-toolchain.sh "<<<" bashism
+
+这个是android官方问题 
+把for ABI in $(tr ',' ' ' <<< $ABIS); do 修改为 for ABI in $(echo "$ABIS" | tr ',' ' '); do
+
+https://code.google.com/p/android/issues/detail?id=74145
+#####243.ubuntu nginx rtmp流媒体服务器的安装
+Setup Nginx-RTMP on Ubuntu 14.04  
+英文文档 https://www.vultr.com/docs/setup-nginx-rtmp-on-ubuntu-14-04
+中文文档 http://www.cnblogs.com/cocoajin/p/4353767.html
+
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+80端口被占用解决方法：
+
+sudo fuser -k 80/tcp
+sudo service nginx start
+
+#####242.ubuntu查看占用某端口的程序   查看端口使用情况，使用netstat命令。
+ 查看已经连接的服务端口（ESTABLISHED netstat -a 查看所有的服务端口（LISTEN，ESTABLISHED） netstat -ap  
+ 查看8080端口，则可以结合grep命令：netstat -ap | grep 8080   
+ 
+	1. 显示占用某个端口的程序
+	lsof -i:80
+	lsof -i:5000
+	2. 显示某个程序是否在运行，查看某个运行的程序
+	ps -aux | grep "paster"
+	ps -aux | grep apache2
+
+#####243.架构师编写详细设计的重要性。
+详细设计，这是考验技术专家设计思维的重要关卡，详细设计说明书应当把具体的模块以最’干净’的方式(黑箱结构）提供给编码者，使得系统整体模块化达到最大；一份好的详细设计说明书，可以使编码的复杂性减低到最低，实际上，严格的讲详细设计说明书应当把每个函数的每个参数的定义都精精细细的提供出来，从需求分析到概要设计到完成详细设计说明书，一个软件项目就应当说完成了一半了。换言之，一个大型软 件系统在完成了一半的时候，其实还没有开始一行代码工作。
