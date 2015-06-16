@@ -2556,3 +2556,14 @@ sudo service nginx start
 [Android Studio missing Subversion plugin](http://stackoverflow.com/questions/23680809/android-studio-missing-subversion-plugin)
 
 Please make sure that the "SubversionIntegration" plugin is enabled in Preferences > Plugins
+
+#####246.Error:Execution failed for task ':app:dexDebug'.> com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command '/home/xxx/tools/android/jdk1.7.0_71/bin/java'' finished with non-zero exit value 2
+
+**检查下是否多次引用同一个jar包**
+以下情况
+1. module下jar包版本不同
+2. 同一个module 在libs中包含乐.jar，而在src下又把相应的source页加入了
+3. gradle中是否重复编译，
+比如 已经加了compile fileTree(include: ['*.jar'], dir: 'libs')
+然而在下面又加一句compile files('libs/xxx.jar')
+参考 [Error:Execution failed for task ':app:dexDebug'. com.android.ide.common.process.ProcessException](http://stackoverflow.com/questions/28917696/errorexecution-failed-for-task-appdexdebug-com-android-ide-common-process)
