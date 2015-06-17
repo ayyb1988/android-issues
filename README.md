@@ -2577,3 +2577,62 @@ Please make sure that the "SubversionIntegration" plugin is enabled in Preferenc
 
 参考 [Error:Execution failed for task ':app:dexDebug'. com.android.ide.common.process.ProcessException](http://stackoverflow.com/questions/28917696/errorexecution-failed-for-task-appdexdebug-com-android-ide-common-process)
 
+#####246.android handler的警告Handler Class Should be Static or Leaks Occur
+在使用Handler更新UI的时候public class SampleActivity extends Activity {
+                                                              
+  private final Handler mLeakyHandler = new Handler() {
+    @Override
+    public void handleMessage(Message msg) {
+      // TODO
+    }
+  }
+}会包上述warning 会导致内存泄露 
+原因在于匿名内部类handler持有activity的引用，当activity finish后 handler还没有处理完，导致activity的view和resource资源不能得到释放，导致内存泄露
+针对这个问题google官方给出了正确的做法
+通过静态内部类 包含activity的弱引用来处理。
+public class SampleActivity extends Activity {
+         
+  /**
+   * Instances of static inner classes do not hold an implicit
+   * reference to their outer class.
+   */
+  private static class MyHandler extends Handler {
+    private final WeakReference<SampleActivity> mActivity;
+         
+    public MyHandler(SampleActivity activity) {
+      mActivity = new WeakReference<SampleActivity>(activity);
+    }
+         
+    @Override
+    public void handleMessage(Message msg) {
+      SampleActivity activity = mActivity.get();
+      if (activity != null) {
+        // ...
+      }
+    }
+  }
+         
+  private final MyHandler mHandler = new MyHandler(this);
+         
+  /**
+   * Instances of anonymous classes do not hold an implicit
+   * reference to their outer class when they are "static".
+   */
+  private static final Runnable sRunnable = new Runnable() {
+      @Override
+      public void run() { }
+  };
+         
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+         
+    // Post a message and delay its execution for 10 minutes.
+    mHandler.postDelayed(sRunnable, 60 * 10 * 1000);
+             
+    // Go back to the previous Activity.
+    finish();
+  }
+}
+
+参考[android handler的警告Handler Class Should be Static or Leaks Occur](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html)
