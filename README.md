@@ -2636,3 +2636,5 @@ public class SampleActivity extends Activity {
 }
 
 参考[android handler的警告Handler Class Should be Static or Leaks Occur](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html)
+
+#####247.androidstudio不同tab切换  ctrl+tab
