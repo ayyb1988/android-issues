@@ -2638,3 +2638,17 @@ public class SampleActivity extends Activity {
 参考[android handler的警告Handler Class Should be Static or Leaks Occur](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html)
 
 #####247.androidstudio不同tab切换  ctrl+tab
+
+#####248.androidstudio 如何自动import用到的类或接口？
+```
+For Windows/Linux, you can go to File -> Settings -> Editor -> General -> Auto Import -> Java and make the following changes:
+
+change Insert imports on paste value to All
+
+markAdd unambigious imports on the fly option as checked
+
+```
+参考[What is the shortcut to Auto import all in Android Studio?](http://stackoverflow.com/questions/16615038/what-is-the-shortcut-to-auto-import-all-in-android-studio/16616085#16616085)
+
+On a Mac, do the same thing in Android Studio -> Preferences
+
