@@ -2649,5 +2649,8 @@ public class SampleActivity extends Activity {
 
 参考[What is the shortcut to Auto import all in Android Studio?](http://stackoverflow.com/questions/16615038/what-is-the-shortcut-to-auto-import-all-in-android-studio/16616085#16616085)
 
-
+#####249.Android NDK: Could not find application project directory !  Android NDK: Please define the NDK_PROJECT_PATH variable to point to it.    
+    /home/cenuser/android/android-ndk-r7b/build/core/build-local.mk:130: *** Android NDK: Aborting    .  Stop.
+    
+    cd到jni目录。或者 ndk-build -C your_project_path
 
