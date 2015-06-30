@@ -2653,4 +2653,15 @@ public class SampleActivity extends Activity {
     /home/cenuser/android/android-ndk-r7b/build/core/build-local.mk:130: *** Android NDK: Aborting    .  Stop.
     
     cd到jni目录。或者 ndk-build -C your_project_path
+#####250 .Why do I want to avoid non-default constructors in fragments?  fragment设置参数正确的做法
 
+
+	Make a bundle object and insert your data (in this example your Category object). Be careful, you can't pass this object directly into the bundle, unless it's serializable. I think it's better to build your object in the fragment, and put only an id or something else into bundle. This is the code to create and attach a bundle:
+	
+	Bundle args = new Bundle();
+	args.putLong("key", value);
+	yourFragment.setArguments(args);
+	After that, in your fragment access data:
+	
+	Type value = getArguments().getType("key");
+	That's all.
