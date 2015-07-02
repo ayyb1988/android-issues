@@ -2667,4 +2667,6 @@ public class SampleActivity extends Activity {
 	That's all.
 	
 #####250. ubuntu下删除.svn的方法
-	find -type d -name '.svn' -exec rm -rfv {} \;
+	find -type d -name '.svn' -exec rm -rfv
+	参考 http://blog.csdn.net/zhaoyu7777777/article/details/9445717
+	
