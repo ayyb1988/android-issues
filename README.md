@@ -2665,3 +2665,6 @@ public class SampleActivity extends Activity {
 	
 	Type value = getArguments().getType("key");
 	That's all.
+	
+#####250. ubuntu下删除.svn的方法
+	find -type d -name '.svn' -exec rm -rfv {} \;
