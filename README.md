@@ -2673,7 +2673,7 @@ public class SampleActivity extends Activity {
 	参考 http://blog.csdn.net/zhaoyu7777777/article/details/9445717
 
 #####252. Fatal : Could not read from remote repository.
-已经把公钥发给发给服务端，在终端命令行也是可以正常的pull push，但是在androidstudio push或者pull的时候确出现上述错误
+git配置使用，已经把公钥发给发给服务端，在终端命令行也是可以正常的pull push，但是在androidstudio push或者pull的时候确出现上述错误
 解决方式 
     setting --> Version Control -->Git ,In the SSH executable dropdown, choose Native
 
