@@ -2666,9 +2666,15 @@ public class SampleActivity extends Activity {
 	Type value = getArguments().getType("key");
 	That's all.
 	
-#####250. ubuntu下删除.svn的方法
+#####251. ubuntu下删除.svn的方法
 
 	find -type d -name '.svn' -exec rm -rfv {} \;
 
 	参考 http://blog.csdn.net/zhaoyu7777777/article/details/9445717
-	
+
+#####252. Fatal : Could not read from remote repository.
+已经把公钥发给发给服务端，在终端命令行也是可以正常的pull push，但是在androidstudio push或者pull的时候确出现上述错误
+解决方式 
+    setting --> Version Control -->Git ,In the SSH executable dropdown, choose Native
+
+
