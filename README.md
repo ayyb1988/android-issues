@@ -2677,4 +2677,5 @@ git配置使用，已经把公钥发给发给服务端，在终端命令行也�
 解决方式 
     setting --> Version Control -->Git ,In the SSH executable dropdown, choose Native
 
-
+#####253. ubuntu获取证书指纹的命令
+keytool -list -keystore xxx.keystore
