@@ -2679,3 +2679,9 @@ git配置使用，已经把公钥发给发给服务端，在终端命令行也�
 
 #####253. ubuntu获取证书指纹的命令
 keytool -list -keystore xxx.keystore
+#####254. mac 命令行安装软件
+通过brew安装，相当于ubuntu中得apt-get
+首先安装brew
+curl -LsSf http://github.com/mxcl/homebrew/tarball/master | sudo tar xvz -C/usr/local --strip 1  
+然后就可以使用brew安装软件了
+比如 使用brew安装软件  brew install wget  
