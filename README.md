@@ -2685,3 +2685,30 @@ keytool -list -keystore xxx.keystore
 curl -LsSf http://github.com/mxcl/homebrew/tarball/master | sudo tar xvz -C/usr/local --strip 1  
 然后就可以使用brew安装软件了
 比如 使用brew安装软件  brew install wget  
+#####255.代码混淆时 报如下错误 Error:Execution failed for task ':app:proguarxxxRelease'.
+> java.io.IOException: Can't read [/libs/xxx.jar] (No such file or directory)
+http://stackoverflow.com/questions/26028171/android-studio-proguard-java-io-ioexception-bin-classes-no-such-file-or-d
+
+解答   **proguard-android.txt文件中不用在指定 -injars, -outjars, or -libraryjars  or libs.**
+
+The Android Gradle plugin already specifies all input and output for you, so you must not specify -injars, -outjars, or -libraryjars.
+
+Moreover, the file proguard-android.txt in the Android SDK specifies all generic Android settings for you, so you shouldn't specify them again.
+
+Essentially, your file proguard-rules.txt can be empty, except for any application-specific settings to make sure any reflection continues to work
+
+#####256.Android中如何设置RadioButton在文字的右边，图标在左边
+解决方法  ：
+第一步：
+android:button="@null"这条语句将原来系统的RadioButton图标给隐藏起来。
+第二步：
+ android:drawableRight="@android:drawable/btn_radio"这条语句
+参考 http://blog.csdn.net/sunnyfans/article/details/7901592
+
+#####257.java报“非法字符: \65279 ”错误的解决方法
+
+众所周知，在跨程序的工程中，统一编码是至关重要的，而目前最普遍的则是统一采用“utf8”编码方案。 
+但是在采用utf8方案的时候，请注意编辑器的自作聪明。 
+比如editplus。 
+原因就在于某些编辑器会往utf8文件中添加utf8标记（editplus称其为签名），它会在文件开始的地方插入三个不可见的字符（0xEF 0xBB 0xBF，即BOM），它的表示的是 Unicode 标记（BOM）。 
+参考 http://hyl198611.iteye.com/blog/1336981
