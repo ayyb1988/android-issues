@@ -2715,3 +2715,5 @@ android:button="@null"这条语句将原来系统的RadioButton图标给隐藏�
 #####258.手机root后 还会出现下述情况Android: adb: copy file to /system (Permission denied)
 解决方式，需要remount /system
 mount -o remount,rw /system
+#####259.androidstudio 手动添加assets文件 路径在哪
+	XXX\src\main\assets  
