@@ -2712,3 +2712,6 @@ android:button="@null"这条语句将原来系统的RadioButton图标给隐藏�
 比如editplus。 
 原因就在于某些编辑器会往utf8文件中添加utf8标记（editplus称其为签名），它会在文件开始的地方插入三个不可见的字符（0xEF 0xBB 0xBF，即BOM），它的表示的是 Unicode 标记（BOM）。 
 参考 http://hyl198611.iteye.com/blog/1336981
+#####258.手机root后 还会出现下述情况Android: adb: copy file to /system (Permission denied)
+解决方式，需要remount /system
+mount -o remount,rw /system
