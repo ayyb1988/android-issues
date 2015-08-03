@@ -2717,3 +2717,31 @@ android:button="@null"这条语句将原来系统的RadioButton图标给隐藏�
 mount -o remount,rw /system
 #####259.androidstudio 手动添加assets文件 路径在哪
 	XXX\src\main\assets  
+#####260.android双击back退出
+```java
+public class MainActivity extends Activity {
+
+
+    private Toast toast;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        toast = Toast.makeText(getApplicationContext(), "确定退出？", 0);
+
+    }
+    public void onBackPressed() {
+        quitToast();
+    }
+
+    private void quitToast() {
+        if(null == toast.getView().getParent()){
+            toast.show();
+        }else{
+            System.exit(0);
+        }
+    }
+}
+```
+参考 [Android关于双击退出应用的问题](http://segmentfault.com/q/1010000002921663)
