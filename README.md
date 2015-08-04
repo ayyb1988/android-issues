@@ -2744,4 +2744,35 @@ public class MainActivity extends Activity {
     }
 }
 ```
+
+或者
+```java
+private Toast toast;
+ protected void onCreate(Bundle savedInstanceState) {
+ 	...
+         toast = Toast.makeText(this, "再按一次退出应用", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, ConversionUtil.dip2px(this, 150));
+ }
+@Override 
+public void onBackPressed() { 
+    if (doubleBackToExitPressedOnce) { 
+        if(toast!=null){
+            toast.cancel();
+        }
+        super.onBackPressed(); 
+        return; 
+    } 
+ 
+    this.doubleBackToExitPressedOnce = true;
+    toast.show();
+ 
+    new Handler().postDelayed(new Runnable() {
+ 
+        @Override 
+        public void run() { 
+            doubleBackToExitPressedOnce=false;                        
+        } 
+    }, 2000); 
+}  
+```
 参考 [Android关于双击退出应用的问题](http://segmentfault.com/q/1010000002921663)
