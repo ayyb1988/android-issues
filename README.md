@@ -2776,3 +2776,8 @@ public void onBackPressed() {
 }  
 ```
 参考 [Android关于双击退出应用的问题](http://segmentfault.com/q/1010000002921663)
+#####261.anroid几个很不错的快捷键
+Ctrl+Shift+Alt+T 重构代码 change name
+Ctrl+I           水平分屏显示【需要在keymap中搜索split 设置move right的快捷键】
+shift+alt+L      变量生成
+ctrl+shift+v     
