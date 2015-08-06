@@ -2679,6 +2679,8 @@ git配置使用，已经把公钥发给发给服务端，在终端命令行也�
 
 #####253. ubuntu获取证书指纹的命令
 keytool -list -keystore xxx.keystore
+eg:查看debug.keystore
+keytool -list -keystore ~/.android/debug.keystore 
 #####254. mac 命令行安装软件
 通过brew安装，相当于ubuntu中得apt-get
 首先安装brew
