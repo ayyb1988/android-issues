@@ -2790,3 +2790,30 @@ Caused by: android.content.res.Resources$NotFoundException: Resource is not a Dr
 You need to use a Theme.AppCompat theme (or descendant) with this activity.
 
 解决方法 ：使用NavigationMenuView的Activity【一般都是mainActivity】继承自AppCompatActivity，并且修改AndroidManifest.xml中对应activity的theme，使用继承自@style/Theme.AppCompat的主题。
+#####262.How to get key and value of HashMap in java
+```java
+public class AccessKeyValueOfHashMap {
+        public static void main(String[] args) {
+                // Create a Empty HashMap 
+                HashMap<String, String> obHashMap = new HashMap<String, String>();
+                // Put values in hash map
+                obHashMap.put("AB", "1");
+                obHashMap.put("EF", "2");
+                obHashMap.put("Gh", "3");
+                obHashMap.put("CD", "4");
+                //Store entry (Key/Value)of HashMap in set
+                Set mapSet = (Set) obHashMap.entrySet();
+                //Create iterator on Set 
+                Iterator mapIterator = mapSet.iterator();
+                System.out.println("Display the key/value of HashMap.");
+                while (mapIterator.hasNext()) {
+                        Map.Entry mapEntry = (Map.Entry) mapIterator.next();
+                        // getKey Method of HashMap access a key of map
+                        String keyValue = (String) mapEntry.getKey();
+                        //getValue method returns corresponding key's value
+                        String value = (String) mapEntry.getValue();
+                        System.out.println("Key : " + keyValue + "= Value : " + value);
+                }
+        }
+}
+```
