@@ -2783,3 +2783,10 @@ public void onBackPressed() {
 2. Ctrl+I           水平分屏显示【需要在keymap中搜索split 设置move right的快捷键】
 3. shift+alt+L      变量生成
 4. ctrl+shift+v     
+#####262.在旧项目中引入android materialdesign 时 出现如下问题
+android.view.InflateException: Binary XML file line #17: Error inflating class android.support.design.internal.NavigationMenuView
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: android.content.res.Resources$NotFoundException: Resource is not a Drawable (color or path): TypedValue{t=0x2/d=0x7f0100c5 a=-1}
+You need to use a Theme.AppCompat theme (or descendant) with this activity.
+
+解决方法 ：使用NavigationMenuView的Activity【一般都是mainActivity】继承自AppCompatActivity，并且修改AndroidManifest.xml中对应activity的theme，使用继承自@style/Theme.AppCompat的主题。
