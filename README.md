@@ -2817,11 +2817,19 @@ public class AccessKeyValueOfHashMap {
         }
 }
 ```
-#####263.设置键盘回车为发送建
+#####263. 设置键盘回车为发送建
 ```java
         android:imeOptions="actionSend"
         android:inputType="text"
 ```
-264.editText 取消背景格式 取消下划线等自带样式 
+#####264. editText 取消背景格式 取消下划线等自带样式 
 	去掉下划线只需把背景设置成为“@null”,
 	如果想设为其他样式也是设置背景
+	
+#####265. How to build an .so binary for a device with a 64-bit CPU?
+```
+latest version of the NDK (right now it's r10e)
+Application.mk
+APP_ABI := armeabi arm64-v8a armeabi-v7a x86 mips
+```
+
