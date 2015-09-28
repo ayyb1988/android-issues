@@ -2832,4 +2832,9 @@ latest version of the NDK (right now it's r10e)
 Application.mk
 APP_ABI := armeabi arm64-v8a armeabi-v7a x86 mips
 ```
+#####266. Android NDK for x86_64 has no reference for bcopy and index
+```
+You can fix this cleanly with a single line in Application.mk (docs):
 
+APP_CFLAGS += -DSTDC_HEADERS
+```
