@@ -2838,3 +2838,58 @@ You can fix this cleanly with a single line in Application.mk (docs):
 
 APP_CFLAGS += -DSTDC_HEADERS
 ```
+#####267.Error:Execution failed for task ':xxx:processDebugManifest'. > Manifest merger failed : uses-sdk element cannot have a "tools:node" attribute
+```
+This has been updated to reflect the release of API 21, Lollipop. Be sure to download the latest SDK.
+
+In one of my modules I had the following in build.gradle:
+
+dependencies {
+    compile 'com.android.support:support-v4:+'
+}
+Changing this to
+
+dependencies {
+    // do not use dynamic updating.
+    compile 'com.android.support:support-v4:21.0.0' 
+}
+fixed the issue.
+```
+参考[Manifest merger failed : uses-sdk:minSdkVersion 14](http://stackoverflow.com/questions/24438170/manifest-merger-failed-uses-sdkminsdkversion-14)
+
+#####268.Error:(1, 1) A problem occurred evaluating project 'xxx'. > Could not create plugin of type 'LibraryPlugin'.
+
+修改了build.gradle中的gradle
+也要修改gradle-wrapper.properties
+例如：
+```java
+build.gradle
+  dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+    gradle-wrapper.properties
+  distributionUrl=https\://services.gradle.org/distributions/gradle-2.4-all.zip
+```
+
+#####269.androidstudio  Building Apps with Over 65K Methods
+```java
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.0"
+
+    defaultConfig {
+        ...
+        minSdkVersion 14
+        targetSdkVersion 21
+        ...
+
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    ...
+}
+
+dependencies {
+  compile 'com.android.support:multidex:1.0.0'
+}
+```
