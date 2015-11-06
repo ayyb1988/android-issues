@@ -2893,3 +2893,25 @@ dependencies {
   compile 'com.android.support:multidex:1.0.0'
 }
 ```
+
+#####270.Caused by: java.lang.NoClassDefFoundError: android.support.v4.util.Pools$SimplePool
+
+http://stackoverflow.com/questions/25477860/error-inflating-class-android-support-v7-widget-recyclerview
+
+
+#####271.Caused by: java.lang.NoSuchMethodException: <init> [class android.content.Context, interface android.util.AttributeSet]
+
+http://stackoverflow.com/questions/11753719/how-do-i-properly-extend-a-layout-class
+
+#####272.java.lang.IndexOutOfBoundsException: Inconsistency detected. Invalid view holder adapter positionViewHolder{423a4c60 position=4 id=-1, oldPos=1, pLpos:1 scrap tmpDetached not recyclable(1) no parent}
+
+
+#####273.Failure [INSTALL_PARSE_FAILED_MANIFEST_MALFORMED]
+http://stackoverflow.com/questions/6056564/installation-error-install-parse-failed-manifest-malformed
+I was having this error because i had capital letters in my package name like this
+
+Com.Example.packagename
+after i had changed it to something like
+
+com.example.packagename
+it was solved
