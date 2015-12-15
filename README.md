@@ -2915,3 +2915,6 @@ after i had changed it to something like
 
 com.example.packagename
 it was solved
+
+#####273.解决异常Circular dependencies cannot exist in RelativeLayout
+RelativeLayout中存在循环的相关
