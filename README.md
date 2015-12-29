@@ -2918,3 +2918,63 @@ it was solved
 
 #####273.解决异常Circular dependencies cannot exist in RelativeLayout
 RelativeLayout中存在循环的相关
+#####274.java.lang.ClassNotFoundException   使用MultiDex 后,运行时发现有些crash或者有些类无法调用 报NoClassDefFound error
+首先正确使用 google的multipartdex
+1. 修改Gradle,导入'com.android.support:multidex:1.0.0',打开multiDexEnabled;
+
+```java
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.0"
+
+    defaultConfig {
+        ...
+        minSdkVersion 14
+        targetSdkVersion 21
+        ...
+
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    ...
+}
+
+dependencies {
+  compile 'com.android.support:multidex:1.0.0'
+}
+```
+2. 修改Application.两种方法:
+
+   1) 直接把Application替换成MultiDexApplication
+
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.multidex.myapplication">
+    <application
+        ...
+        android:name="android.support.multidex.MultiDexApplication">
+        ...
+    </application>
+</manifest>
+```
+  2) 在原来的Application中修改调用MultiDex.install(this);
+
+```java
+public class HelloMultiDexApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+}
+```
+如果做了上面处理,依旧NoClassDefFound error
+一些在二级Dex加载之前,可能会被调用到的类(比如静态变量的类),需要放在主Dex中.否则会ClassNotFoundError.
+    通过修改Gradle,可以显式的把一些类放在Main Dex中.
+**参考**[Android 分Dex (MultiDex)](http://www.cnblogs.com/wingyip/p/4496028.html)
