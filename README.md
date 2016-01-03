@@ -2981,3 +2981,6 @@ public class HelloMultiDexApplication extends Application {
 通过修改Gradle,可以显式的把一些类放在Main Dex中.
     
 **参考**[Android 分Dex (MultiDex)](http://www.cnblogs.com/wingyip/p/4496028.html)
+
+#####275.Linux 32 Bit Libraries
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
