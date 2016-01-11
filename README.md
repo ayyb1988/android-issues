@@ -2984,3 +2984,20 @@ public class HelloMultiDexApplication extends Application {
 
 #####275.Linux 32 Bit Libraries
 sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
+#####276.Android Material Design TabLayout.when more than screen width scroll when less than screen width fill
+Android TabLayout,当tab总宽度少于一屏时候,扩展为屏幕宽度展示.当tab总宽度大于一屏时,滚动显示
+
+```
+Tab gravity only effects MODE_FIXED.
+
+One possible solution is to set your layout_width to wrap_content and layout_gravity to center_horizontal:
+
+<android.support.design.widget.TabLayout
+    android:id="@+id/sliding_tabs"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    app:tabMode="scrollable" />
+If the tabs are smaller than the screen width, the TabLayout itself will also be smaller and it will be centered because of the gravity. If the tabs are bigger than the screen width, the TabLayout will match the screen width and scrolling will activate.
+```
+参考[Android Support Design TabLayout: Gravity Center and Mode Scrollable](http://stackoverflow.com/questions/30616474/android-support-design-tablayout-gravity-center-and-mode-scrollable)
