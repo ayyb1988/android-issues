@@ -3058,4 +3058,5 @@ android {
 }  
 注意这里的flavors的名字要和你的文件夹的名字对应。这样配置之后，构建的就是多渠道的APK了。
 ```
-
+参考
+[Gradle实现的两种简单的多渠道打包方法](http://blog.csdn.net/maosidiaoxian/article/details/42000913#comments)
