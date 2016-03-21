@@ -3001,3 +3001,60 @@ One possible solution is to set your layout_width to wrap_content and layout_gra
 If the tabs are smaller than the screen width, the TabLayout itself will also be smaller and it will be centered because of the gravity. If the tabs are bigger than the screen width, the TabLayout will match the screen width and scrolling will activate.
 ```
 参考[Android Support Design TabLayout: Gravity Center and Mode Scrollable](http://stackoverflow.com/questions/30616474/android-support-design-tablayout-gravity-center-and-mode-scrollable)
+#####277. android多渠道打包，目前采用的方案是
+在AndroidManifest.xml文件中配置
+```java
+<meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+```
+
+在app的build.gradle文件中配置
+```java
+android{
+ //用于生成不同渠道号
+    productFlavors {
+        wandoujia {}
+        baidu {}
+        yingyongbao{}
+        ...
+
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+}
+```
+这样编译时会生成对应的渠道包apk.现在问题来了，如果有几十个渠道，会生成对应几十个apk包．打包编译一个apk一般需要１分钟左右(和电脑配置有关)．那么打包几十个要几十分钟的时间．确实挺费时间的．那么有没有好的方式呐？
+当然是有的
+我们可以采用如下方案处理．通过文件配置只需要生成一个apk包
+```java
+此种方法是需要创建文件的。
+我们在写完我们的代码之后，在app/src下面，分别创建和main同级目录的文件夹umeng, wandoujia, yingyongbao,这三个文件夹里面都各只有一个AndroidManifest.xml文件，文件只需要如下：
+[plain] view plain copy 在CODE上查看代码片派生到我的代码片
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"  
+    package="your.package.name">  
+    <application>  
+  
+          <meta-data android:name="UMENG_CHANNEL" android:value="UMENG"/>  
+  
+    </application>  
+</manifest>  
+注意，上面的value的值要和你的渠道名所对应。比如wandoujia里面要对应为你豌豆荚上的渠道名（如WANDOUJAI）。
+然后在你的build.gradle的android{}节点里面，添加productFlavors节点，代码如下：
+[plain] view plain copy 在CODE上查看代码片派生到我的代码片
+android {  
+    // 这里是你的其他配置  
+  
+    productFlavors{  
+        umeng{  }  
+        wandoujai {  }  
+        yingyongbao{  }  
+    }  
+    // 你的其他配置  
+}  
+注意这里的flavors的名字要和你的文件夹的名字对应。这样配置之后，构建的就是多渠道的APK了。
+```
+
