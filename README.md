@@ -3001,8 +3001,9 @@ One possible solution is to set your layout_width to wrap_content and layout_gra
 If the tabs are smaller than the screen width, the TabLayout itself will also be smaller and it will be centered because of the gravity. If the tabs are bigger than the screen width, the TabLayout will match the screen width and scrolling will activate.
 ```
 参考[Android Support Design TabLayout: Gravity Center and Mode Scrollable](http://stackoverflow.com/questions/30616474/android-support-design-tablayout-gravity-center-and-mode-scrollable)
-#####277. android多渠道打包，目前采用的方案是
-在AndroidManifest.xml文件中配置
+#####277. android多渠道打包
+
+目前采用的方案是，在AndroidManifest.xml文件中配置
 ```java
 <meta-data
             android:name="UMENG_CHANNEL"
