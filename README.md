@@ -3060,3 +3060,56 @@ android {
 ```
 参考
 [Gradle实现的两种简单的多渠道打包方法](http://blog.csdn.net/maosidiaoxian/article/details/42000913#comments)
+
+#####278 Tcpdump抓包
+
+有些模拟器比如genymotion自带了tcpdump，如果没有的话，需要下载tcpdump:
+http://www.strazzere.com/android/tcpdump
+
+把tcpdump push到/data/local下，抓包命令：
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhbiaQSphuqU1CZjc1ZWEp6kdoEffqdITcibXuBwYLia1WiaFf9QribCQT4Nw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+#####279 查看签名
+
+很多开发者服务都需要绑定签名信息，用下面的命令可以查看签名：
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhlzicAUQfEqy195Q9afEIJug88TwPyI7CcWD0kYuHmG06ApAWGvBUykA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+#####280 系统日志中几个重要的TAG
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhTcZEgtChM5ibibF6IWTqibOQhGibYiax2kPsJ3hAJSmEDwm1Ps4LRQUbm4Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+#####281 一行居中，多行居左的TextView
+
+这个一般用于提示信息对话框，如果文字是一行就居中，多行就居左。
+在TextView外套一层wrap_content的ViewGroup即可简单实现：
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhQ9QF3lGJgJ8Ttu7PQqvIOVb4Zlq1CQx9Ht8FEcMquSorIlA5G0AsjQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+#####282 setCompoundDrawablesWithIntrinsicBounds()
+
+网上一大堆setCompoundDrawables()方法无效不显示的问题，然后解决方法是setBounds，需要计算大小…
+
+不用这么麻烦，用setCompoundDrawablesWithIntrinsicBounds()这个方法最简单！
+
+#####282 更新媒体库文件
+
+以前做ROM的时候经常碰到一些第三方软件（某音乐APP）下载了新文件或删除文件之后，但是媒体库并没有更新，因为这个是需要第三方软件主动触发。
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhszd3YUQSMbnxfibtNiaJQE76ibHvJueicqAnemRQtz8ZI3ohgGM071JQlw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+#####283 Monkey参数
+
+大家都知道，跑monkey的参数设置有一些要注意的地方，比如太快了不行不切实际，太慢了也不行等等，这里给出一个参考：
+
+一边跑monkey，一遍抓log吧。
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhHPJCQdQfobVl1Rx6mCpOSSxdkqkqgrMicialXntLYknTwdDgkRZQykbA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+
+#####284 强大的dumpsys
+
+dumpsys可以查看系统服务和状态，非常强大，可通过如下查看所有支持的子命令：
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhMVJMFyiaXdZHsjX0ruz7HJusicqIOYOm3H8ntlrR9cwUJd4tYyZGtqew/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+这里列举几个稍微常用的：
+![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkh7a5bxibo6JES1uoZ1zmdourtBticEuVOM3RIWsxk7NKGjibX53BHZpcKQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+媒体库会在手机启动，SD卡插拔的情况下进行全盘扫描，不是实时的而且代价比较大，所以单个文件的刷新很有必要。
+
+注[278-284来源于]　
+[你应该知道的那些Android小经验](https://mp.weixin.qq.com/s?__biz=MzA4MjU5NTY0NA==&mid=404388098&idx=1&sn=8bbbba7692dca68cdda2212dec4d86c0&scene=1&srcid=0320gXPloap70ixGeYnNUaAW&key=710a5d99946419d972fe638b34e38edcf7064c302f8526f10b927c7e27886585b83b5b60bc342db482d2a7846e24c284&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.11.3+build(15D21)&version=11020201&pass_ticket=pvdhfR4lRer%2FtYDsP5cnFux5OK0GM%2FUQMgt5TOvHlpQ%3D)
