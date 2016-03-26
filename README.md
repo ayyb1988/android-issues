@@ -3122,3 +3122,35 @@ dumpsys可以查看系统服务和状态，非常强大，可通过如下查看�
 
 注[278-284来源于]　
 [你应该知道的那些Android小经验](https://mp.weixin.qq.com/s?__biz=MzA4MjU5NTY0NA==&mid=404388098&idx=1&sn=8bbbba7692dca68cdda2212dec4d86c0&scene=1&srcid=0320gXPloap70ixGeYnNUaAW&key=710a5d99946419d972fe638b34e38edcf7064c302f8526f10b927c7e27886585b83b5b60bc342db482d2a7846e24c284&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.11.3+build(15D21)&version=11020201&pass_ticket=pvdhfR4lRer%2FtYDsP5cnFux5OK0GM%2FUQMgt5TOvHlpQ%3D)
+
+#####285. 在布局文件时，在ｘｍｌ可视化文件中看到效果，而又不影响最终展示．可以通过tools来协助
+比如：
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="75dp"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:id="@+id/tv_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/refresh_big"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        tools:text="点我，重新加载"
+        tools:visibility="visible"/>
+</RelativeLayout>
+
+```
+加填充xml文件时，TextView是隐藏的，但又想在xml中直观的看到它显示后的整体效果．借助xmlns:tools="http://schemas.android.com/tools" 完美实现．
+参考[android中xml tools属性详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0309/2567.html)
