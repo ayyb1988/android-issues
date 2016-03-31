@@ -3164,3 +3164,15 @@ Save ‘xxx’ to dictionary..
 
 Package names are written in all lower case to avoid conflict with the names of classes or interfaces.
 包名小写,避免和类名或接口名冲突
+#####288. JNI undefined reference to `__android_log_print'
+```
+android {
+    defaultConfig {
+        ndk {
+            moduleName "your_module_name"
+            ldLibs "log"
+        }
+    }
+}
+```
+参考[undefined reference to `__android_log_print'](http://stackoverflow.com/questions/4455941/undefined-reference-to-android-log-print)
