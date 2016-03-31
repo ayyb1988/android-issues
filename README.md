@@ -3155,3 +3155,12 @@ dumpsys可以查看系统服务和状态，非常强大，可通过如下查看�
 加填充xml文件时，TextView是隐藏的，但又想在xml中直观的看到它显示后的整体效果．借助xmlns:tools="http://schemas.android.com/tools" 完美实现．
 
 参考[android中xml tools属性详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0309/2567.html)
+#####286. android studio对于错误拼写/不识别的英文单词，给予波浪提示。
+Spellchecker inspection helps locate typos and misspelling in your code, comments and literals, and fix them in one click
+[android studio对于错误拼写/不识别的英文单词，给予波浪提示](http://blog.csdn.net/miyuehu/article/details/44154963)
+选中单词，单击鼠标右键 spelling
+Save ‘xxx’ to dictionary..
+#####287. Warning: Use '$' instead of '.' for inner classes (or use only lowercase letters in package names); replace  .with $ 
+
+Package names are written in all lower case to avoid conflict with the names of classes or interfaces.
+包名小写,避免和类名或接口名冲突
