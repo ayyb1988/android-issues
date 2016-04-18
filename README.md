@@ -3176,3 +3176,85 @@ android {
 }
 ```
 参考[undefined reference to `__android_log_print'](http://stackoverflow.com/questions/4455941/undefined-reference-to-android-log-print)
+
+#####289. gradle升级到gradle2.10后出现如下问题
+
+ Error:Execution failed for task ':xxx:packageReleaseResources'.
+> xxxx/res/drawable/data.bin: Error: The file name must end with .xml or .png
+
+解决方案
+Restart Eclipse (unfortunately) and the problem will go away.
+参考[Android: failed to convert @drawable/picture into a drawable](http://stackoverflow.com/questions/8874262/android-failed-to-convert-drawable-picture-into-a-drawable)
+
+
+#####290. No JDK found. Please validate either STUDIO_JDK, JDK_HOME or JAVA_HOME environment variable points to valid JDK installation.
+
+我安装了android-studio，通过命令行可以启动androidstudio，但是创建启动器后启动失败
+
+解决方案：
+参考http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=466830
+不能有多余的空白字符。
+你完全可以用desktop-file-validate xxx.desktop命令来检验
+用xdg-open xxx.desktop看报错没有
+
+
+#####291. 
+$ adb devices
+List of devices attached
+adb server version (32) doesn't match this client (35); killing...
+error: could not install *smartsocket* listener: Address already in use
+ADB server didn't ACK
+* failed to start daemon *
+error: cannot connect to daemon
+
+同一类问题
+android studio 识别不到 genymotion device
+
+解决方案
+https://m.oschina.net/blog/647554
+http://blog.csdn.net/wuyuxing24/article/details/45169991
+设置好之后重启下genymotion以及androidstudio
+
+
+
+#####292. 
+Error:No cached version of com.android.tools.build:gradle:1.2.3 available for offline mode.
+<a href="toggle.offline.mode">Disable Gradle 'offline mode' and sync project</a>
+
+使用匹配的gradle
+2.0.0
+2.10.0
+
+
+#####293. 
+xxx/IxxxbackService.aidl
+Error:(31) couldn't find import for class com.kugou.common.module.fm.IxxFmPlayStateListener
+Error:(33) couldn't find import for class com.kugou.common.service.ringtone.IxxRingtonePlayStateListener
+Error:Execution failed for task ':androidkugou:compileDebugAidl'.
+> java.lang.RuntimeException: com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command '/home/yabinyang/tools/sdk/build-tools/22.0.1/aidl'' finished with non-zero exit value 1
+
+选择匹配的 buildToolsVersion
+rebuild
+
+
+#####294.java中 volatile static结合使用
+static 静态
+volatile 不稳定的
+[JAVA 里static 和volatile的区别](http://www.jdon.com/44080)
+```
+变量放在主存区上，使用该变量的每个线程，都将从主存区拷贝一份到自己的工作区上进行操作。
+
+volatile, 声明这个字段易变（可能被多个线程使用），Java内存模型负责各个线程的工作区与主存区的该字段的值保持同步，即一致性。
+
+static, 声明这个字段是静态的（可能被多个实例共享），在主存区上该类的所有实例的该字段为同一个变量，即唯一性。
+
+volatile, 声明变量值的一致性；static,声明变量的唯一性。
+
+此外，volatile同步机制不同于synchronized, 前者是内存同步，后者不仅包含内存同步（一致性），且保证线程互斥（互斥性）。
+static 只是声明变量在主存上的唯一性，不能保证工作区与主存区变量值的一致性；除非变量的值是不可变的，即再加上final的修饰符，否则static声明的变量，不是线程安全的。
+
+1) If a field is declared static, there exists exactly one incarnation of the field, no matter how many instances (possibly zero) of the class may eventually be created. 
+
+2) A field may be declared volatile, in which case the Java Memory Model ensures that all threads see a consistent value for the variable。
+
+```
