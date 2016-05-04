@@ -3268,3 +3268,5 @@ eg:如果没有ids.xml中定义。在layout文件中声明方式如下@+id/xxx�
 
 #####296.音乐领域，什么是EQ？
 EQ就是均衡器equalizer的缩写。在高级一点的混音器上，都会有EQ的调整钮。一般来说，EQ调整的都是音轧的播放的高音量（terble）、中音（middle）、以及重音(bass)的音乐频变化
+#####297.Android, ListView IllegalStateException: “The content of the adapter has changed but ListView did not receive a notification”
+http://stackoverflow.com/questions/3132021/android-listview-illegalstateexception-the-content-of-the-adapter-has-changed
