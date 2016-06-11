@@ -3272,3 +3272,5 @@ EQ就是均衡器equalizer的缩写。在高级一点的混音器上，都会有
 http://stackoverflow.com/questions/3132021/android-listview-illegalstateexception-the-content-of-the-adapter-has-changed
 #####298. 在mac os上安装了oracle官网的jdk 1.7后，怎么找不到具体jdk路径了
 一般在 /Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home
+#####299. Error:Could not read cache value from 'xxx/gradle/daemon/2.10/registry.bin'.
+根据路径找到registry.bin，删除，重启androidstudio即可。
