@@ -3258,7 +3258,7 @@ static 只是声明变量在主存上的唯一性，不能保证工作区与主�
 2) A field may be declared volatile, in which case the Java Memory Model ensures that all threads see a consistent value for the variable。
 
 ```
-#####295.ids的作用和使用场景
+##### 295.ids的作用和使用场景
 作用：通过ids.xml中事先定义好id，在使用时候不用重新生成对应的id，提高性能和可维护性。优化编译效率。统一管理资源Id。
 eg:如果没有ids.xml中定义。在layout文件中声明方式如下@+id/xxx。
    如果定义过，使用方式如下@id/xxx
@@ -3266,11 +3266,29 @@ eg:如果没有ids.xml中定义。在layout文件中声明方式如下@+id/xxx�
 使用场景，对于需要同意管理资源id的场景，比如框架id
 参考[android项目中values中ids.xml的作用](http://blog.csdn.net/jdsjlzx/article/details/42024447)
 
-#####296.音乐领域，什么是EQ？
+##### 296.音乐领域，什么是EQ？
 EQ就是均衡器equalizer的缩写。在高级一点的混音器上，都会有EQ的调整钮。一般来说，EQ调整的都是音轧的播放的高音量（terble）、中音（middle）、以及重音(bass)的音乐频变化
-#####297.Android, ListView IllegalStateException: “The content of the adapter has changed but ListView did not receive a notification”
+##### 297.Android, ListView IllegalStateException: “The content of the adapter has changed but ListView did not receive a notification”
 http://stackoverflow.com/questions/3132021/android-listview-illegalstateexception-the-content-of-the-adapter-has-changed
-#####298. 在mac os上安装了oracle官网的jdk 1.7后，怎么找不到具体jdk路径了
+##### 298. 在mac os上安装了oracle官网的jdk 1.7后，怎么找不到具体jdk路径了
 一般在 /Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home
-#####299. Error:Could not read cache value from 'xxx/gradle/daemon/2.10/registry.bin'.
+##### 299. Error:Could not read cache value from 'xxx/gradle/daemon/2.10/registry.bin'.
 根据路径找到registry.bin，删除，重启androidstudio即可。
+##### 300. Android: AlertDialog causes a memory leak
+
+```
+in the leaked activity's onDestroy(), set the AlertDialog's ListView's onItemClickListener() to null, which will release the reference to the listener an make whatever memory allocated within that listener to be eligible for GC. This way you won't get OOM. It's just a workaround and the real solution should actually be incorporated in the ListView.
+
+Here's a sample code for your onDestroy():
+
+@Override 
+protected void onDestroy() { 
+    super.onDestroy(); 
+    if(leakedDialog != null) { 
+            ListView lv = leakedDialog.getListView();
+            if(lv != null)  lv.setOnItemClickListener(null);
+    } 
+} 
+```
+对于adapter同理
+参考 http://stackoverflow.com/questions/7083441/android-alertdialog-causes-a-memory-leak
