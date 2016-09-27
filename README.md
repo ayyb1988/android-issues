@@ -3292,3 +3292,46 @@ protected void onDestroy() {
 ```
 对于adapter同理
 参考 http://stackoverflow.com/questions/7083441/android-alertdialog-causes-a-memory-leak
+
+##### 301 viewpager setcurrentItem之后，调用相关的监听 onpageSelected onPageChangedState onPageScrolled
+如果是想在动画执行完成之后，执行某些操作，可以通过如下方式
+```java
+private class PageChangeListener implements OnPageChangeListener { 
+ 
+    @Override 
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+   } 
+ 
+    @Override 
+    public void onPageSelected(int position) {
+        isPageChanged = true; 
+    } 
+ 
+    @Override 
+    public void onPageScrollStateChanged(int state) {
+        switch (state) {
+        case ViewPager.SCROLL_STATE_IDLE:
+            if (isPageChanged) { 
+                updateCurrentPage();//this will be called when animation ends 
+                isPageChanged = false; 
+            } 
+            break; 
+        case ViewPager.SCROLL_STATE_DRAGGING:
+            break; 
+        case ViewPager.SCROLL_STATE_SETTLING:
+            break; 
+        } 
+    } 
+} 
+```
+参考[Android viewpager animation](http://stackoverflow.com/questions/10892403/android-viewpager-animation)
+
+
+#####302   Instant Run does not support deploying build variants with multidex enabled, to a target with API level 20 or below. To use Instant Run with a multidex enabled build variant, deploy to a target with API level 21 or higher.");
+
+http://stackoverflow.com/questions/36516931/instant-run-disabled-for-multidexed-application
+
+
+
+
+
