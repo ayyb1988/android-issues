@@ -3332,6 +3332,10 @@ private class PageChangeListener implements OnPageChangeListener {
 http://stackoverflow.com/questions/36516931/instant-run-disabled-for-multidexed-application
 
 
+#####303  java.util.ConcurrentModificationException  at java.util.LinkedList$LinkIterator.next(LinkedList.java:124)
+
+linkedlist 不是线程安全的，用ConcurrentLinkedQueue
+参考 [LinkedList多线程不安全的解决办法](http://blog.sina.com.cn/s/blog_56d8ea900100xbht.html)
 
 
 
