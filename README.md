@@ -3337,5 +3337,13 @@ http://stackoverflow.com/questions/36516931/instant-run-disabled-for-multidexed-
 linkedlist 不是线程安全的，用ConcurrentLinkedQueue
 参考 [LinkedList多线程不安全的解决办法](http://blog.sina.com.cn/s/blog_56d8ea900100xbht.html)
 
+##### 304 sqlite 出现 unrecognized token: "xxxx"
+使用sql 语句中，如果有字符串，必须加上 ‘ ‘单括号 括起来
+```
+You need to escape the filename parameter. The punctuation in the filename is confusing SQLite. You could do it by surrounding the filename in 'single quotes' in the string you pass in to SQLite, but it's cleaner and safer to pass it as a separate argument, like this:
 
-
+sqliteDatabase.update(AndroidOpenDbHelper.TABLE_FILE, values, 
+        AndroidOpenDbHelper.COLUMN_NAME_FILE_NAME+"=?", new String[] {filename});
+	
+````【】
+[android.database.sqlite.SQLiteException: unrecognized token:](http://stackoverflow.com/questions/11058063/android-database-sqlite-sqliteexception-unrecognized-token)
