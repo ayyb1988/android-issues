@@ -3340,10 +3340,25 @@ linkedlist 不是线程安全的，用ConcurrentLinkedQueue
 ##### 304 sqlite 出现 unrecognized token: "xxxx"
 使用sql 语句中，如果有字符串，必须加上 ‘ ‘单括号 括起来
 ```
-You need to escape the filename parameter. The punctuation in the filename is confusing SQLite. You could do it by surrounding the filename in 'single quotes' in the string you pass in to SQLite, but it's cleaner and safer to pass it as a separate argument, like this:
+You need to escape the filename parameter. The punctuation in the filename is confusing SQLite. You could do it by surrounding the filename in 'single quotes' in the string you pass in to SQLite, but it`s cleaner and safer to pass it as a separate argument, like this:
 
 sqliteDatabase.update(AndroidOpenDbHelper.TABLE_FILE, values, 
         AndroidOpenDbHelper.COLUMN_NAME_FILE_NAME+"=?", new String[] {filename});
 	
-````【】
+````
 [android.database.sqlite.SQLiteException: unrecognized token:](http://stackoverflow.com/questions/11058063/android-database-sqlite-sqliteexception-unrecognized-token)
+
+##### 305 ScrollView嵌套ListView，listItem.measure(0,0);报空指针异常NullPointerException
+```
+当调用listItem.measure(0, 0);报空指针时问题:
+检查Adapter适配时Item的根容器为RelativeLayout,
+报错原因：
+In platform version 17 and lower, RelativeLayout was affected by a measurement bug that could cause child views to be measured with incorrect MeasureSpec values. (See MeasureSpec.makeMeasureSpec for more details.) This was triggered when a RelativeLayout container was placed in a scrolling container, such as a ScrollView or HorizontalScrollView. If a custom view not equipped to properly measure with the MeasureSpec mode UNSPECIFIED was placed in a RelativeLayout, this would silently work anyway as RelativeLayout would pass a very large AT_MOST MeasureSpec instead.
+This behavior has been preserved for apps that set android:targetSdkVersion="17" or older in their manifest`s uses-sdktag for compatibility. Apps targeting SDK version 18 or newer will receive the correct behavior
+有三种解决方案：
+一、升级版本到4.2.2
+二、更改根容器为LinearLayout
+三、在适配器里添加convertView.setLayoutParams(new LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); convertView为Item的view
+```
+参考[ScrollView嵌套ListView，listItem.measure(0,0);报空指针异常NullPointerException](http://blog.csdn.net/u012248099/article/details/51983443)
