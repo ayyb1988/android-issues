@@ -3362,3 +3362,64 @@ This behavior has been preserved for apps that set android:targetSdkVersion="17"
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); convertView为Item的view
 ```
 参考[ScrollView嵌套ListView，listItem.measure(0,0);报空指针异常NullPointerException](http://blog.csdn.net/u012248099/article/details/51983443)
+
+#####　306 Webview访问https 报错 primary error: 5 certificate: Issued to: CN=*
+
+```java
+public void onReceivedSslError(final WebView view, final SslErrorHandler handler, SslError error) {
+    Log.d("CHECK", "onReceivedSslError");
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    AlertDialog alertDialog = builder.create();
+    String message = "Certificate error.";
+    switch (error.getPrimaryError()) {
+        case SslError.SSL_UNTRUSTED:
+            message = "The certificate authority is not trusted.";
+            break;
+        case SslError.SSL_EXPIRED:
+            message = "The certificate has expired.";
+            break;
+        case SslError.SSL_IDMISMATCH:
+            message = "The certificate Hostname mismatch.";
+            break;
+        case SslError.SSL_NOTYETVALID:
+            message = "The certificate is not yet valid.";
+            break;
+    }
+    message += " Do you want to continue anyway?";
+    alertDialog.setTitle("SSL Certificate Error");
+    alertDialog.setMessage(message);
+    alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            Log.d("CHECK", "Button ok pressed");
+            // Ignore SSL certificate errors
+            handler.proceed();
+        }
+    });
+    alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            Log.d("CHECK", "Button cancel pressed");
+            handler.cancel();
+        }
+    });
+    alertDialog.show();
+    }
+});
+webView.loadUrl("https://www.google.co.in/");
+
+```
+参考
+[Android : Workaround for webview not loading https url](http://vardhan-justlikethat.blogspot.com/2014/07/android-workaround-for-webview-not.html)
+[Android WebView not loading an HTTPS URL](http://stackoverflow.com/questions/7416096/android-webview-not-loading-an-https-url/20836071#20836071)
+[How can load https url without use of ssl in android webview](http://stackoverflow.com/questions/35569047/how-can-load-https-url-without-use-of-ssl-in-android-webview)
+
+[Android安全开发之安全使用HTTPS](https://www.easyaq.com/newsdetail/id/37169867.shtml) 这是一篇很好的文章！！！
+目前很多应用都用webview加载H5页面，如果服务端采用的是可信CA颁发的证书，在webView.setWebViewClient(webviewClient)时重载WebViewClient的onReceivedSslError()，如果出现证书错误，直接调用handler.proceed()会忽略错误继续加载证书有问题的页面，如果调用handler.cancel()可以终止加载证书有问题的页面，证书出现问题了，可以提示用户风险，让用户选择加载与否，如果是需要安全级别比较高，可以直接终止页面加载，提示用户网络环境有风险：
+![](https://cdn.easyaq.com/@/image/download/y2361mq04769o3.JPG)
+不建议直接用handler.proceed()，聚安全的应用安全扫描器会扫出来直接调用handler.proceed()的情况。
+如果webview加载https需要强校验服务端证书，可以在onPageStarted()中用HttpsURLConnection强校验证书的方式来校验服务端证书，如果校验不通过停止加载网页。当然这样会拖慢网页的加载速度，需要进一步优化，具体优化的办法不在本次讨论范围，这里也不详细讲解了。
+
+需要在客户端中预埋证书文件，或者将证书硬编码写在代码中
+
+正确使用HTTPS并非完全能够防住客户端的Hook分析修改，要想保证通信安全，也需要依靠其他方法，比如重要信息在交给HTTPS传输之前进行加密，另外实现客户端请求的签名处理，保证客户端与服务端通信请求不被伪造
