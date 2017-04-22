@@ -3423,3 +3423,32 @@ webView.loadUrl("https://www.google.co.in/");
 需要在客户端中预埋证书文件，或者将证书硬编码写在代码中
 
 正确使用HTTPS并非完全能够防住客户端的Hook分析修改，要想保证通信安全，也需要依靠其他方法，比如重要信息在交给HTTPS传输之前进行加密，另外实现客户端请求的签名处理，保证客户端与服务端通信请求不被伪造
+
+#####307 Nautilus not opening up, showing GLib error
+```
+
+(nautilus:12837): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+
+(nautilus:12837): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+无法注册应用程序: 已到超时限制
+
+(nautilus:12837): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(nautilus:12837): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(nautilus:12837): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+
+```
+解决方案：
+```
+To be able to restart nautilus properly, do the following:
+
+See what nautilus processes are running :
+ps aux | grep nautilus
+Kill all nautilus processes you see :
+sudo kill PIDNUMBER
+Restart nautilus :
+nautilus -q
+```
+参考[Nautilus not opening up, showing GLib error](https://askubuntu.com/questions/788182/nautilus-not-opening-up-showing-glib-error)
