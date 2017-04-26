@@ -3362,6 +3362,7 @@ This behavior has been preserved for apps that set android:targetSdkVersion="17"
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); convertView为Item的view
 ```
 参考[ScrollView嵌套ListView，listItem.measure(0,0);报空指针异常NullPointerException](http://blog.csdn.net/u012248099/article/details/51983443)
+[动态计算listview的高度listItem.measure(0, 0)报空指针异常解决办法](http://blog.csdn.net/u011007829/article/details/52847560)
 
 #####　306 Webview访问https 报错 primary error: 5 certificate: Issued to: CN=*
 
