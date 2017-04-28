@@ -3425,6 +3425,21 @@ webView.loadUrl("https://www.google.co.in/");
 
 正确使用HTTPS并非完全能够防住客户端的Hook分析修改，要想保证通信安全，也需要依靠其他方法，比如重要信息在交给HTTPS传输之前进行加密，另外实现客户端请求的签名处理，保证客户端与服务端通信请求不被伪造
 
+
+Which versions of WebView are impacted?
+The impacted versions are 53 and 54 builds of Android WebView. Versions 52 and earlier, or 55 and later, do not exhibit the problem. For affected versions, all channels including stable, beta, dev, canary releases are impacted.
+
+When does the issue start occurring?
+The issue manifests 10 weeks after the build date. For 53 stable builds, 10 weeks have already passed. For 54, builds will expire as follows:
+
+
+Build ID Expiration   Date
+54.0.2840.68          12/27/2016
+54.0.2840.85           1/7/2017
+
+
+[WebView FAQ for Symantec Certificate Transparency Issue](https://www.chromium.org/developers/androidwebview/webview-ct-bug)
+
 #####307 Nautilus not opening up, showing GLib error
 ```
 
