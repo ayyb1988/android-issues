@@ -3468,3 +3468,17 @@ Restart nautilus :
 nautilus -q
 ```
 参考[Nautilus not opening up, showing GLib error](https://askubuntu.com/questions/788182/nautilus-not-opening-up-showing-glib-error)
+
+
+#####308 javaWeb中URLEncoder.encode空格问题
+```java
+java中URLEncoder.encode之前进行替换：
+
+ //解决urlecode空格问题
+
+message=message.replaceAll(" ", "%20");
+
+event.setField("msg", URLEncoder.encode(message,"UTF-8"));
+```
+
+参考[javaWeb中URLEncoder.encode空格问题](http://www.cnblogs.com/zsychanpin/p/6734297.html)
