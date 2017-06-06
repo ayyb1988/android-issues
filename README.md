@@ -3482,3 +3482,24 @@ event.setField("msg", URLEncoder.encode(message,"UTF-8"));
 ```
 
 参考[javaWeb中URLEncoder.encode空格问题](http://www.cnblogs.com/zsychanpin/p/6734297.html)
+
+
+##### 309 Using node.js as a simple web server
+```
+You can use Connect and ServeStatic with Node.js for this:
+
+1. Install connect and serve-static with NPM
+$ npm install connect serve-static
+2. Create server.js file with this content:
+var connect = require('connect');
+var serveStatic = require('serve-static');
+connect().use(serveStatic(__dirname)).listen(8080, function(){
+    console.log('Server running on 8080...');
+});
+3. Run with Node.js
+$ node server.js
+You can now go to http://localhost:8080/yourfile.html
+
+```
+
+
