@@ -3503,4 +3503,30 @@ You can now go to http://localhost:8080/yourfile.html
 ```
 [Using node.js as a simple web server](https://stackoverflow.com/questions/6084360/using-node-js-as-a-simple-web-server)
 
+##### 310 when user androidstudio look at source  of androidsdk ,Sources for Android API xx Platform not found (Android Studio xx)
+
+1. download API xx SDK
+2. reboot as
+3. if still cannot look ,find this file `~/.AndroidStudio2.3/config/options` and 
+```
+diff --git a/options/jdk.table.xml b/options/jdk.table.xml
+index 0112b91..33828b8 100644
+--- a/options/jdk.table.xml
++++ b/options/jdk.table.xml
+@@ -76,7 +76,7 @@
+         </javadocPath>
+         <sourcePath>
+           <root type="composite">
+-            <root type="simple" url="file:///Applications/Android Studio.app/sdk/sources/android-19" />
++            <root type="simple" url="file:///Users/tehdawgz/dev/android-sdk/sources/android-19" />
+           </root>
+         </sourcePath>
+       </roots>
+
+```
+
+参考[Android Studio: how to attach Android SDK sources?](https://stackoverflow.com/questions/21221679/android-studio-how-to-attach-android-sdk-sources/26352763#26352763)
+
+
+
 
