@@ -3527,6 +3527,8 @@ index 0112b91..33828b8 100644
 
 参考[Android Studio: how to attach Android SDK sources?](https://stackoverflow.com/questions/21221679/android-studio-how-to-attach-android-sdk-sources/26352763#26352763)
 
-
-
+##### 311
+Force removing ActivityRecord{19b5f794 u0  Activity3 t26}: app died, no saved state
+D/ActivityManager(12813): resumeTopActivityLocked: Restarting ActivityRecord{3e083bc3 u0 Activity2 t26}
+I/ActivityManager(12813): Start proc 31742: Activity2
 
