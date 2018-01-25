@@ -3532,3 +3532,13 @@ Force removing ActivityRecord{19b5f794 u0  Activity3 t26}: app died, no saved st
 D/ActivityManager(12813): resumeTopActivityLocked: Restarting ActivityRecord{3e083bc3 u0 Activity2 t26}
 I/ActivityManager(12813): Start proc 31742: Activity2
 
+
+##### 312 android filter多个tag
+1. androidstudio方式  In this example we are using by Log Tag (regex) option to display log messages for any of the three matching tag names using the pipe | separator (without spaces):
+
+MainTagName|SomeTagName|SomeOtherTagName
+
+2. 命令行方式  in case someone stumbles in on this like I did, you can filter on multiple tags by adding a comma in between, like so:
+
+adb logcat -s "browser","webkit"
+
