@@ -3542,3 +3542,11 @@ MainTagName|SomeTagName|SomeOtherTagName
 
 adb logcat -s "browser","webkit"
 
+##### 313 Decompiled .class file,bytecode version:52.0(Java 8) 
+解决办法：点击右上角的Download，但是下载完点击Refresh之后没有反应，这时候需要重新关联sdk。具体方法：File->Appearence&Behavior->System Settings->Android Sdk,将SDK的路径重新设置一遍即可。
+参考[Decompiled .class file,bytecode version:52.0(Java 8)](https://blog.csdn.net/qq_17477507/article/details/52634049)
+
+
+
+
+
