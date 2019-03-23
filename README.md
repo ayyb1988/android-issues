@@ -843,7 +843,7 @@ I think you should also import 'SmoothProgressBar' library in your project https
 
 
 
-#####91.@+id  @id  android:id  ?android:attr
+##### 91.@+id  @id  android:id  ?android:attr
 
 。@+id：宣告一個id值來識別控制項
 
@@ -856,7 +856,7 @@ I think you should also import 'SmoothProgressBar' library in your project https
 
 。?android:attr：引用Android預置定義樣式
 
-#####92.
+##### 92.
 Looks like there is no way to avoid modifications made by the import plugin. All the settings it has is three checkboxes related to dependency management. I tried to uncheck all of them but still it does change my project structure.
 
 I managed to add existing library projects manually: 
@@ -866,21 +866,21 @@ I managed to add existing library projects manually:
 
 Moreover, after that the IDE recognized that library as module and highlighted its folder in bold font whithin Project Structure.
 
-#####93.如何从当前的activity获得根视图  或者 Android如何获取Activity的View？
+##### 93.如何从当前的activity获得根视图  或者 Android如何获取Activity的View？
 
 ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0)
 或者
 getWindow().getDecorView().findViewById(android.R.id.content)
 
-#####94.radiogroup中的radiobutton如何不显示图标button，并且可以等比例再用wight
+##### 94.radiogroup中的radiobutton如何不显示图标button，并且可以等比例再用wight
 	android：button="@none" 或@null
 	android：drawableTop ="@drawable/xxx" 或者也设置为空
 
-#####95.搜索也是一门艺术   浓缩搜索  详细搜索
+##### 95.搜索也是一门艺术   浓缩搜索  详细搜索
 
-#####96.android layoutinfater  没有显示内容  检查parent试图是否为空
+##### 96.android layoutinfater  没有显示内容  检查parent试图是否为空
 
-#####97..Error:Execution failed for task ':app:dexDebug'.UNEXPECTED TOP-LEVEL EXCEPTION:  	com.android.dex.DexException: Multiple dex files define
+##### 97..Error:Execution failed for task ':app:dexDebug'.UNEXPECTED TOP-LEVEL EXCEPTION:  	com.android.dex.DexException: Multiple dex files define
 Landroid/support/annotation/AnimRes;
   		at com.android.dx.merge.DexMerger.readSortableTypes(DexMerger.java:596)
   		at com.android.dx.merge.DexMerger.getSortedTypes(DexMerger.java:554)
@@ -894,36 +894,36 @@ Landroid/support/annotation/AnimRes;
   		at com.android.dx.command.Main.main(Main.java:106)
 
 检查 Multiple dex
-#####98.android动画的三种形式  tween  animition  ,frame animition ,property animition
+##### 98.android动画的三种形式  tween  animition  ,frame animition ,property animition
 
 
-#####99.LoopingViewPager    QuickReturn
+##### 99.LoopingViewPager    QuickReturn
 
 
-#####100.  appcompat-v7:21.0.0': No resource found that matches the given name: attr 'android:actionModeShareDrawable'
+##### 100.  appcompat-v7:21.0.0': No resource found that matches the given name: attr 'android:actionModeShareDrawable'
 		http://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro
 
-#####101.recycleview vs listview head foot  .recycleview实现gridview   新事物不要躲避，机遇。
+##### 101.recycleview vs listview head foot  .recycleview实现gridview   新事物不要躲避，机遇。
 
-#####102.清除Android工程中没用到的资源    http://www.cnblogs.com/angeldevil/p/3725358.html
+##### 102.清除Android工程中没用到的资源    http://www.cnblogs.com/angeldevil/p/3725358.html
 
-#####103.xmlns:tools与tools:context
+##### 103.xmlns:tools与tools:context
 tools:context="activity name"这一句不会被打包进APK。只是ADT的Layout Editor在你当前的Layout文件里面设置对应的渲染上下文，说明你当前的Layout所在的渲染上下文是activity name对应的那个activity，如果这个activity在manifest文件中设置了Theme，那么ADT的Layout Editor会根据这个Theme来渲染你当前的Layout。就是说如果你设置的MainActivity设置了一个Theme.Light（其他的也可以），那么你在可视化布局管理器里面看到的背景啊控件啊什么的就应该是Theme.Light的样子。仅用于给你看所见即所得的效果而已。
 
 
-#####104. android-studio下使用volley    Android working with Volley Library   http://www.androidhive.info/2014/05/android-working-with-volley-library-1/
+##### 104. android-studio下使用volley    Android working with Volley Library   http://www.androidhive.info/2014/05/android-working-with-volley-library-1/
 http://blog.gssxgss.me/setup-android-studio-and-volley-usage-1/
 
-#####105.androidstudio 导入libs后要同步一下才可以用
+##### 105.androidstudio 导入libs后要同步一下才可以用
 
 
-#####106.fragment + butterknife 的使用
+##### 106.fragment + butterknife 的使用
  othersetting-->Compiler → Annotation Processors. Check "Enable annotation processing".
 
 
-#####107. com.astuetz.PagerSlidingTabStrip$PageListener.onPageScrolled(
+##### 107. com.astuetz.PagerSlidingTabStrip$PageListener.onPageScrolled(
 
-#####108.
+##### 108.
 E/InputEventReceiver﹕ Exception dispatching input event.
 E/MessageQueue-JNI﹕ Exception in MessageQueue callback: handleReceiveCallback
 E/MessageQueue-JNI﹕ java.lang.RuntimeException: native typeface cannot be made
@@ -933,7 +933,7 @@ E/MessageQueue-JNI﹕ java.lang.RuntimeException: native typeface cannot be made
 
 androidstudio中assert的位置和eclipse中的不同。需要注意。否则调用assert中资源会找不到而出现问题。
 
-#####109.Custom Fonts in Android  
+##### 109.Custom Fonts in Android  
 http://sudharti.github.io/articles/custom-fonts-android/
 
 Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "fonts/font_name.ttf");
@@ -946,10 +946,10 @@ Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "fonts/font_na
   et.setTypeface(tf2);
 
 
-#####110.PagerSlidingTabStrip  the view throws an exception if there are no tabs available to display. It would be great if the view failed gracefully or gave a  		better error message. 
+##### 110.PagerSlidingTabStrip  the view throws an exception if there are no tabs available to display. It would be great if the view failed gracefully or gave a  		better error message. 
 https://github.com/astuetz/PagerSlidingTabStrip/issues/69
 
-#####111.  Android开发之ScrollView中嵌套ListView的解决方案   http://blog.csdn.net/minimicall/article/details/40983331
+##### 111.  Android开发之ScrollView中嵌套ListView的解决方案   http://blog.csdn.net/minimicall/article/details/40983331
 
 	 重写listview的onmeasure方法   
 	 @Override
@@ -972,16 +972,16 @@ https://github.com/astuetz/PagerSlidingTabStrip/issues/69
 	android:configChanges="orientation|screenLayout"
 
 
-#####113.   Caused by: java.lang.IllegalStateException: You need to use a Theme.AppCompat theme (or descendant) with this activity.
+##### 113.   Caused by: java.lang.IllegalStateException: You need to use a Theme.AppCompat theme (or descendant) with this activity.
 
-#####114.http://jgilfelt.github.io/android-actionbarstylegenerator/
+##### 114.http://jgilfelt.github.io/android-actionbarstylegenerator/
 	这个网站可以在线配置action bar的样式，支持holo、support v7、sherlock 
 
 
 
 
 
-#####115.在其它界面异常之后返回到FragmentActivity Fragment显示异常（重叠或不显示）解决方 ...
+##### 115.在其它界面异常之后返回到FragmentActivity Fragment显示异常（重叠或不显示）解决方 ...
 
 	前面专门开了个帖来问这个问题，问题描述详见：http://www.eoeandroid.com/thread-496879-1-1.html
 	当然，问题没有解决掉，一直也很郁闷，今天花了点时间换了N多关键词来找，最后也忘了在哪里看到一个方法，死马当活马医的写上，居然好了。
@@ -990,7 +990,7 @@ https://github.com/astuetz/PagerSlidingTabStrip/issues/69
 	@Override protected void onSaveInstanceState(Bundle outState) { }
 
 
-#####116.修复Android App中出现的重复菜单项及Fragment重叠
+##### 116.修复Android App中出现的重复菜单项及Fragment重叠
 https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
 
 
@@ -1016,7 +1016,7 @@ https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
 
 
 
-#####117.通过activity 得到它的fM,通过tag指定到上级fragment，从而获取到其中的接口数据 yyb
+##### 117.通过activity 得到它的fM,通过tag指定到上级fragment，从而获取到其中的接口数据 yyb
         if (getActivity().getSupportFragmentManager().findFragmentByTag("videos") instanceof QuickReturnInterface) {
             mCoordinator = (QuickReturnInterface) getActivity().getSupportFragmentManager().findFragmentByTag("news");
         } else {
@@ -1024,14 +1024,14 @@ https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
         }
 
 
-#####118.内存优化相关   ANDROID内存优化(大汇总)   http://blog.csdn.net/a396901990/article/details/38707007
+##### 118.内存优化相关   ANDROID内存优化(大汇总)   http://blog.csdn.net/a396901990/article/details/38707007
 
-#####119.PagerSlidingTabStrip   Changing the title of the adapter and notifyDatasetChanged does not work. #13
+##### 119.PagerSlidingTabStrip   Changing the title of the adapter and notifyDatasetChanged does not work. #13
 	Call notifyDataSetChanged() on the PagerSlidingTabStrip instead.
 	Worked for me yesterday with data loaded from a CursorLoader.
 
 
-#####120.Ubuntu下的屏幕录制软件RecordMyDesktop
+##### 120.Ubuntu下的屏幕录制软件RecordMyDesktop
 
 
 	安装：
@@ -1071,9 +1071,9 @@ https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
 	Live Like You're Dying And Never Stop Tying
 
 
-#####121.一个ListView中会创建很多个convertview，并不是所有的都复用的，比如同一屏显示的肯定都是不一样的convertview。
+##### 121.一个ListView中会创建很多个convertview，并不是所有的都复用的，比如同一屏显示的肯定都是不一样的convertview。
 
-#####122.性能优化  框架的选择。volley【尽量google支持的或者原生的】  buttferty  greendao  【没有采用反射技术的，比如greendao使用的是code generation。而不是注解】
+##### 122.性能优化  框架的选择。volley【尽量google支持的或者原生的】  buttferty  greendao  【没有采用反射技术的，比如greendao使用的是code generation。而不是注解】
 	
 	为什么greenDao使用的是code generation，而不是注解？
 
@@ -1088,12 +1088,12 @@ https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
 	DaoGenerator 和DaoTest 在GPL V3以下是可用的。这些许可条款可以满足大部分的开发者使用。
 
 
-#####123.Lazy Loading
+##### 123.Lazy Loading
 	lazy不是翻译成懒，差不多算延迟、推迟的意思。
 	是说不在初始化时loading，而是推迟到必须loading时才进行loading。
 
 
-#####124.android-stuido    File > Invalidate
+##### 124.android-stuido    File > Invalidate
 问题：could not save application settings:java.util.zip.zipexception:incorrect header check 
 
 	https://code.google.com/p/android/issues/detail?id=56190
@@ -1102,7 +1102,7 @@ https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
 	To work around this, invoke **File > Invalidate** Caches.  If you can't start Android Studio at all, try going to the cache directory (its location depends on your platform) and delete it, then start Studio.
 
 
-#####125.[Android.gitignore](https://github.com/github/gitignore/blob/master/Android.gitignore)
+##### 125.[Android.gitignore](https://github.com/github/gitignore/blob/master/Android.gitignore)
 	.gradle
 	/local.properties
 	/.idea/workspace.xml
@@ -1138,15 +1138,15 @@ https://typeblog.net/tech/2014/08/22/fix-duplicate-menu.html
 	*.log
 
 
-#####126.NDK With Android Studio
+##### 126.NDK With Android Studio
 http://blog.csdn.net/u011570979/article/details/43966567
 
-#####127.chrome+红杏 honx.in/i/VLMhwoIaA1yvXz7n
+##### 127.chrome+红杏 honx.in/i/VLMhwoIaA1yvXz7n
 
-#####127.ANDROID仿IOS时间_ANDROID仿IOS弹出提示框
+##### 127.ANDROID仿IOS时间_ANDROID仿IOS弹出提示框
  http://dwtedx.com/itshare_297.html
 
-#####128. Android TextView drawableLeft 在代码中实现
+##### 128. Android TextView drawableLeft 在代码中实现
 
 方法1
 
@@ -1163,9 +1163,9 @@ Drawable top, Drawable right, Drawable bottom)
 
 
 
-#####129. /* 去锯齿 */ paint.setAntiAlias(true);
+##### 129. /* 去锯齿 */ paint.setAntiAlias(true);
 
-#####130.android 画图之setXfermode   
+##### 130.android 画图之setXfermode   
 http://blog.csdn.net/wm111/article/details/7299294
 	setXfermode 
 
@@ -1185,10 +1185,10 @@ http://blog.csdn.net/wm111/article/details/7299294
 	      
 	    canvas.drawBitmap(mask, 0f, 0f, paint);    
 
-#####131.   ubuntu android cordova
+##### 131.   ubuntu android cordova
 	Setting up PhoneGap on Ubuntu for Android app development
 
-#####132.webview的页面都finish了居然还能听到视频播放的声音，查了下发现webview的
+##### 132.webview的页面都finish了居然还能听到视频播放的声音，查了下发现webview的
 	onResume方法可以继续播放，
 	onPause可以暂停播放，
 	但是这两个方法都是在Added in API level 11添加的，所以需要用反射来完成。
@@ -1202,7 +1202,7 @@ http://blog.csdn.net/wm111/article/details/7299294
 	android:hardwareAccelerated="true"
 
 
-#####133.Create new project on Android, Error: Studio Unknown host 'services.gradle.org'
+##### 133.Create new project on Android, Error: Studio Unknown host 'services.gradle.org'
 	解决方法
 	please try following steps:
 	Go to..
@@ -1212,7 +1212,7 @@ http://blog.csdn.net/wm111/article/details/7299294
 	you can also use the test connection button and check with google.com if it works or not
     [关于红杏的公益代理, Android Studio以及freso的编译](http://www.liaohuqiu.net/cn/posts/about-red-apricot-and-compiling-fresco/)
 
-#####134.ListView.setOnItemClickListener 点击无效
+##### 134.ListView.setOnItemClickListener 点击无效
 
 
 	如果ListView中的单个Item的view中存在checkbox，button等view，会导致ListView.setOnItemClickListener无效，
@@ -1234,31 +1234,31 @@ http://blog.csdn.net/wm111/article/details/7299294
 
 	arg2参数才是点击事件位置的参数
 
-#####135.listview addheader 如果有多个header，可以把多个header封装。把封装后的view作为header
+##### 135.listview addheader 如果有多个header，可以把多个header封装。把封装后的view作为header
 
-#####136.emojicon
+##### 136.emojicon
 emojicon, https://github.com/rockerhieu/emojicon
 emojicon, https://github.com/ankushsachdeva/emojicon
 
-#####137.新闻评论页，如何实现盖楼，listview的高度自适应？
+##### 137.新闻评论页，如何实现盖楼，listview的高度自适应？
     控件的高度 设为wrap_content
 
-#####138.android改变CheckBox和后面文字的间距  http://www.haodaima.net/art/1891872
+##### 138.android改变CheckBox和后面文字的间距  http://www.haodaima.net/art/1891872
 	解决方法：
 	1.设置android:paddingLeft="25dip",就可以了。
 	2.设置checkbox的背景图片。系统默认的给checkbox加的有一个透明的背景。
 
 
-#####139.volley请求超时 如何处理  http://stackoverflow.com/questions/17094718/android-volley-timeout
+##### 139.volley请求超时 如何处理  http://stackoverflow.com/questions/17094718/android-volley-timeout
 
 	myRequest.setRetryPolicy(new DefaultRetryPolicy(
 		        MY_SOCKET_TIMEOUT_MS, 
 		        DefaultRetryPolicy.DEFAULT_MAX_RETRIES, 
 		        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));  
-#####140.Listview getItemViewType的使用  对于不同xml，使用多个viewhold
+##### 140.Listview getItemViewType的使用  对于不同xml，使用多个viewhold
 
 
-#####141.Android “Only the original thread that created a view hierarchy can touch its views.”    http://stackoverflow.com/questions/5161951/android-only-the-original-thread-that-created-a-view-hierarchy-can-touch-its-vi
+##### 141.Android “Only the original thread that created a view hierarchy can touch its views.”    http://stackoverflow.com/questions/5161951/android-only-the-original-thread-that-created-a-view-hierarchy-can-touch-its-vi
 	thread = new Thread(){
 		@Override
 		public void run() {
@@ -1284,7 +1284,7 @@ emojicon, https://github.com/ankushsachdeva/emojicon
 		};
 	    };  
 	    thread.start();
-#####142.Java SDK提供了对上述三种压缩技术的支持：Inflater类和Deflater类直接用zlib库对数据压缩/
+##### 142.Java SDK提供了对上述三种压缩技术的支持：Inflater类和Deflater类直接用zlib库对数据压缩/
 	解压缩，GZIPInputStream类和GZIPOutputStream类提供了对gzip格式的支持，ZipFile、Zi
 	pInputStream、ZipOutputStream则用于处理zip格式的文件。
 
@@ -1293,7 +1293,7 @@ emojicon, https://github.com/ankushsachdeva/emojicon
 	用gzip或zip等相关的类来处理了。
 
 
-#####143.利用volley进行http设置请求头、超时及请求参数设置(post)
+##### 143.利用volley进行http设置请求头、超时及请求参数设置(post)
 
 	这里以post请求说明，get请求相似设置请求头及超时。
 
@@ -1339,7 +1339,7 @@ emojicon, https://github.com/ankushsachdeva/emojicon
 	    }
 	 
 
-#####144.  android handler的警告Handler Class Should be Static or Leaks Occur
+##### 144.  android handler的警告Handler Class Should be Static or Leaks Occur
 
 	在使用Handler更新UI的时候，我是这样写的：
 
@@ -2330,7 +2330,7 @@ vcs -->Enable Version Control Integration 选择git/subversion 即可
 　　Linux下还提供了一个killall命令，可以直接使用进程的名字而不是进程标识号，例如：
 　　# killall -HUP inetd
   
-#####230.android导入eclipse项目后，出现如下问题
+##### 230.android导入eclipse项目后，出现如下问题
 
 1.Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 1.2.3.
 
@@ -2361,10 +2361,10 @@ distributionUrl=http\://services.gradle.org/distributions/gradle-1.12-all.zip  �
 
 ok 经过上面两步，从studio导入eclipse项目的正常使用。
 
-#####231.android 注释模板
+##### 231.android 注释模板
 Settings-->Editor-->File and Code Templates-->Includes
 
-#####232.shape中子节点的常用属性
+##### 232.shape中子节点的常用属性
 1. ```<gradient>  渐变```
 
 android:startColor  起始颜色
@@ -2405,10 +2405,10 @@ android:dashGap 表示'-'横线之间的距离
 参考 http://blog.csdn.net/cs_li1126/article/details/11781577
 
 #####
-#####233. GestureOverlayView
+##### 233. GestureOverlayView
 
-#####234.Animation lInAnim = AnimationUtils.loadAnimation(mActivity, R.anim.push_left_in);
-#####235.  使用volley 错误时，无法看到详细的信息。
+##### 234.Animation lInAnim = AnimationUtils.loadAnimation(mActivity, R.anim.push_left_in);
+##### 235.  使用volley 错误时，无法看到详细的信息。
 可以有两种方式处理
 
 **方法1**.抓包  通过Fiddler抓包，在ubuntu系统下通过mitmproty来抓包。或者android4.4chrome浏览器--工具--检查设备来抓包。
@@ -2453,13 +2453,13 @@ ServerError
     }
  所以重写gsongrequest中的 方法parseNetworkError。通过networkResponse的data获得更详细的错误信息信息。
  
-#####236. url编码
+##### 236. url编码
 遇到一个很奇怪的问题，同一个url在手机端请求 返回400【页面不存在】 而把这个url放在pc浏览器请求却是好的。
 最后发现是url中有个空格 。在app上没有进行url.encode 导致。至于pc上请求没问题是自动做了url编码处理。
 切记 请求的url有特殊字符 如空格 加号等，一定要url编码。
 
 
-#####237. How to add a header to a listView which is inside SwipeRefreshLayout?
+##### 237. How to add a header to a listView which is inside SwipeRefreshLayout?
 http://stackoverflow.com/questions/27048416/how-to-add-a-header-to-a-listview-which-is-inside-swiperefreshlayout
 https://code.google.com/p/android/issues/detail?id=80227
 上述是2014年12月份报的android自身 bug。先已经修改
@@ -2467,11 +2467,11 @@ https://code.google.com/p/android/issues/detail?id=80227
 android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id/listview}
 
 
-#####238. 定义键盘 会遇到“当按返回键界面退出，但虚拟键盘没有消失的现象”针对这个问题，可以在onpause中强制隐藏它。代码如下。
+##### 238. 定义键盘 会遇到“当按返回键界面退出，但虚拟键盘没有消失的现象”针对这个问题，可以在onpause中强制隐藏它。代码如下。
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(et_content.getWindowToken(), 0);
 
-#####239. 代码混淆导致问题，快速定位
+##### 239. 代码混淆导致问题，快速定位
 在代码混淆打包时，屏蔽了用到的第三方库，以及常规的android混淆屏蔽，但生成的apk，运行还是会崩溃。事出必有因，后来分析找到原因是**使用greendao自动生成的java-gen下package中的内容没有屏蔽代码混淆，导致存储数据库时，报**a(SourceFile:) NullPointerException ****
 混淆打包apk，运行崩溃 总结如下：
 
@@ -2516,22 +2516,22 @@ android.widget.ListView{41ad4e90 VFED.VC. .F...... 0,0-720,1110 #7f090078 app:id
         }
     }
 ```
-#####240 通过gif展示一个效果是否直观，Ubuntu平台gif动画录制工具可以使用命令行，录制的效果很好，并且录制gif大小很小。
+##### 240 通过gif展示一个效果是否直观，Ubuntu平台gif动画录制工具可以使用命令行，录制的效果很好，并且录制gif大小很小。
 byzanz-record --duration=30 --x=0 --y=50 --width=500  out.gif
 参数说明 --duration 录制的时长  --x录制开始的x坐标   --y录制开始的y坐标 --width 宽度  out.gif 输出文件名
 
-#####241.微信开放平台申请流程  http://bbs.mob.com/thread-95-1-4.html
+##### 241.微信开放平台申请流程  http://bbs.mob.com/thread-95-1-4.html
 命令操作如下
 	
 keytool -list -keystore keystore文件路径 得到对应app的秘钥  把:去掉，大写转小写即可。
 
-#####242.编译ijkplayer时，报错 NDK r10: Fix make-standalone-toolchain.sh "<<<" bashism
+##### 242.编译ijkplayer时，报错 NDK r10: Fix make-standalone-toolchain.sh "<<<" bashism
 
 这个是android官方问题 
 把for ABI in $(tr ',' ' ' <<< $ABIS); do 修改为 for ABI in $(echo "$ABIS" | tr ',' ' '); do
 
 https://code.google.com/p/android/issues/detail?id=74145
-#####243.ubuntu nginx rtmp流媒体服务器的安装
+##### 243.ubuntu nginx rtmp流媒体服务器的安装
 Setup Nginx-RTMP on Ubuntu 14.04  
 英文文档 https://www.vultr.com/docs/setup-nginx-rtmp-on-ubuntu-14-04
 中文文档 http://www.cnblogs.com/cocoajin/p/4353767.html
@@ -2542,7 +2542,7 @@ nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
 sudo fuser -k 80/tcp
 sudo service nginx start
 
-#####242.ubuntu查看占用某端口的程序   查看端口使用情况，使用netstat命令。
+##### 242.ubuntu查看占用某端口的程序   查看端口使用情况，使用netstat命令。
  查看已经连接的服务端口（ESTABLISHED netstat -a 查看所有的服务端口（LISTEN，ESTABLISHED） netstat -ap  
  查看8080端口，则可以结合grep命令：netstat -ap | grep 8080   
  
@@ -2553,15 +2553,15 @@ sudo service nginx start
 	ps -aux | grep "paster"
 	ps -aux | grep apache2
 
-#####243.架构师编写详细设计的重要性。
+##### 243.架构师编写详细设计的重要性。
 详细设计，这是考验技术专家设计思维的重要关卡，详细设计说明书应当把具体的模块以最’干净’的方式(黑箱结构）提供给编码者，使得系统整体模块化达到最大；一份好的详细设计说明书，可以使编码的复杂性减低到最低，实际上，严格的讲详细设计说明书应当把每个函数的每个参数的定义都精精细细的提供出来，从需求分析到概要设计到完成详细设计说明书，一个软件项目就应当说完成了一半了。换言之，一个大型软 件系统在完成了一半的时候，其实还没有开始一行代码工作。
-#####244.http请求的url含有中字符时，需要Uri编码。Uri.encoder()
-#####245.使用androidstudio时，不知道什么原因svn不见了  
+##### 244.http请求的url含有中字符时，需要Uri编码。Uri.encoder()
+##### 245.使用androidstudio时，不知道什么原因svn不见了  
 [Android Studio missing Subversion plugin](http://stackoverflow.com/questions/23680809/android-studio-missing-subversion-plugin)
 
 Please make sure that the "SubversionIntegration" plugin is enabled in Preferences > Plugins
 
-#####246.Error:Execution failed for task ':app:dexDebug'.> com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command '/home/xxx/tools/android/jdk1.7.0_71/bin/java'' finished with non-zero exit value 2
+##### 246.Error:Execution failed for task ':app:dexDebug'.> com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command '/home/xxx/tools/android/jdk1.7.0_71/bin/java'' finished with non-zero exit value 2
 
 **检查下是否多次引用同一个jar包**
 以下情况
@@ -2577,7 +2577,7 @@ Please make sure that the "SubversionIntegration" plugin is enabled in Preferenc
 
 参考 [Error:Execution failed for task ':app:dexDebug'. com.android.ide.common.process.ProcessException](http://stackoverflow.com/questions/28917696/errorexecution-failed-for-task-appdexdebug-com-android-ide-common-process)
 
-#####246.android handler的警告Handler Class Should be Static or Leaks Occur
+##### 246.android handler的警告Handler Class Should be Static or Leaks Occur
 在使用Handler更新UI的时候public class SampleActivity extends Activity {
                                                               
   private final Handler mLeakyHandler = new Handler() {
@@ -2637,9 +2637,9 @@ public class SampleActivity extends Activity {
 
 参考[android handler的警告Handler Class Should be Static or Leaks Occur](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html)
 
-#####247.androidstudio不同tab切换  ctrl+tab
+##### 247.androidstudio不同tab切换  ctrl+tab
 
-#####248.androidstudio 如何自动import用到的类或接口？
+##### 248.androidstudio 如何自动import用到的类或接口？
 	For Windows/Linux, you can go to File -> Settings -> Editor -> General -> Auto Import -> Java and make the following changes:
 	
 	change Insert imports on paste value to All
@@ -2649,11 +2649,11 @@ public class SampleActivity extends Activity {
 
 参考[What is the shortcut to Auto import all in Android Studio?](http://stackoverflow.com/questions/16615038/what-is-the-shortcut-to-auto-import-all-in-android-studio/16616085#16616085)
 
-#####249.Android NDK: Could not find application project directory !  Android NDK: Please define the NDK_PROJECT_PATH variable to point to it.    
+##### 249.Android NDK: Could not find application project directory !  Android NDK: Please define the NDK_PROJECT_PATH variable to point to it.    
     /home/cenuser/android/android-ndk-r7b/build/core/build-local.mk:130: *** Android NDK: Aborting    .  Stop.
     
     cd到jni目录。或者 ndk-build -C your_project_path
-#####250 .Why do I want to avoid non-default constructors in fragments?  fragment设置参数正确的做法
+##### 250 .Why do I want to avoid non-default constructors in fragments?  fragment设置参数正确的做法
 
 
 	Make a bundle object and insert your data (in this example your Category object). Be careful, you can't pass this object directly into the bundle, unless it's serializable. I think it's better to build your object in the fragment, and put only an id or something else into bundle. This is the code to create and attach a bundle:
@@ -2666,28 +2666,28 @@ public class SampleActivity extends Activity {
 	Type value = getArguments().getType("key");
 	That's all.
 	
-#####251. ubuntu下删除.svn的方法
+##### 251. ubuntu下删除.svn的方法
 
 	find -type d -name '.svn' -exec rm -rfv {} \;
 
 	参考 http://blog.csdn.net/zhaoyu7777777/article/details/9445717
 
-#####252. Fatal : Could not read from remote repository.
+##### 252. Fatal : Could not read from remote repository.
 git配置使用，已经把公钥发给发给服务端，在终端命令行也是可以正常的pull push，但是在androidstudio push或者pull的时候确出现上述错误
 解决方式 
     setting --> Version Control -->Git ,In the SSH executable dropdown, choose Native
 
-#####253. ubuntu获取证书指纹的命令
+##### 253. ubuntu获取证书指纹的命令
 keytool -list -keystore xxx.keystore
 eg:查看debug.keystore
 keytool -list -keystore ~/.android/debug.keystore 
-#####254. mac 命令行安装软件
+##### 254. mac 命令行安装软件
 通过brew安装，相当于ubuntu中得apt-get
 首先安装brew
 curl -LsSf http://github.com/mxcl/homebrew/tarball/master | sudo tar xvz -C/usr/local --strip 1  
 然后就可以使用brew安装软件了
 比如 使用brew安装软件  brew install wget  
-#####255.代码混淆时 报如下错误 Error:Execution failed for task ':app:proguarxxxRelease'.
+##### 255.代码混淆时 报如下错误 Error:Execution failed for task ':app:proguarxxxRelease'.
 > java.io.IOException: Can't read [/libs/xxx.jar] (No such file or directory)
 http://stackoverflow.com/questions/26028171/android-studio-proguard-java-io-ioexception-bin-classes-no-such-file-or-d
 
@@ -2699,7 +2699,7 @@ Moreover, the file proguard-android.txt in the Android SDK specifies all generic
 
 Essentially, your file proguard-rules.txt can be empty, except for any application-specific settings to make sure any reflection continues to work
 
-#####256.Android中如何设置RadioButton在文字的右边，图标在左边
+##### 256.Android中如何设置RadioButton在文字的右边，图标在左边
 解决方法  ：
 第一步：
 android:button="@null"这条语句将原来系统的RadioButton图标给隐藏起来。
@@ -2707,19 +2707,19 @@ android:button="@null"这条语句将原来系统的RadioButton图标给隐藏�
  android:drawableRight="@android:drawable/btn_radio"这条语句
 参考 http://blog.csdn.net/sunnyfans/article/details/7901592
 
-#####257.java报“非法字符: \65279 ”错误的解决方法
+##### 257.java报“非法字符: \65279 ”错误的解决方法
 
 众所周知，在跨程序的工程中，统一编码是至关重要的，而目前最普遍的则是统一采用“utf8”编码方案。 
 但是在采用utf8方案的时候，请注意编辑器的自作聪明。 
 比如editplus。 
 原因就在于某些编辑器会往utf8文件中添加utf8标记（editplus称其为签名），它会在文件开始的地方插入三个不可见的字符（0xEF 0xBB 0xBF，即BOM），它的表示的是 Unicode 标记（BOM）。 
 参考 http://hyl198611.iteye.com/blog/1336981
-#####258.手机root后 还会出现下述情况Android: adb: copy file to /system (Permission denied)
+##### 258.手机root后 还会出现下述情况Android: adb: copy file to /system (Permission denied)
 解决方式，需要remount /system
 mount -o remount,rw /system
-#####259.androidstudio 手动添加assets文件 路径在哪
+##### 259.androidstudio 手动添加assets文件 路径在哪
 	XXX\src\main\assets  
-#####260.android双击back退出
+##### 260.android双击back退出
 ```java
 public class MainActivity extends Activity {
 
@@ -2778,19 +2778,19 @@ public void onBackPressed() {
 }  
 ```
 参考 [Android关于双击退出应用的问题](http://segmentfault.com/q/1010000002921663)
-#####261.anroid几个很不错的快捷键
+##### 261.anroid几个很不错的快捷键
 1. Ctrl+Shift+Alt+T 重构代码 change name
 2. Ctrl+I           水平分屏显示【需要在keymap中搜索split 设置move right的快捷键】
 3. shift+alt+L      变量生成
 4. ctrl+shift+v     
-#####262.在旧项目中引入android materialdesign 时 出现如下问题
+##### 262.在旧项目中引入android materialdesign 时 出现如下问题
 android.view.InflateException: Binary XML file line #17: Error inflating class android.support.design.internal.NavigationMenuView
 Caused by: java.lang.reflect.InvocationTargetException
 Caused by: android.content.res.Resources$NotFoundException: Resource is not a Drawable (color or path): TypedValue{t=0x2/d=0x7f0100c5 a=-1}
 You need to use a Theme.AppCompat theme (or descendant) with this activity.
 
 解决方法 ：使用NavigationMenuView的Activity【一般都是mainActivity】继承自AppCompatActivity，并且修改AndroidManifest.xml中对应activity的theme，使用继承自@style/Theme.AppCompat的主题。
-#####262.How to get key and value of HashMap in java
+##### 262.How to get key and value of HashMap in java
 ```java
 public class AccessKeyValueOfHashMap {
         public static void main(String[] args) {
@@ -2817,28 +2817,28 @@ public class AccessKeyValueOfHashMap {
         }
 }
 ```
-#####263. 设置键盘回车为发送建
+##### 263. 设置键盘回车为发送建
 ```java
         android:imeOptions="actionSend"
         android:inputType="text"
 ```
-#####264. editText 取消背景格式 取消下划线等自带样式 
+##### 264. editText 取消背景格式 取消下划线等自带样式 
 	去掉下划线只需把背景设置成为“@null”,
 	如果想设为其他样式也是设置背景
 	
-#####265. How to build an .so binary for a device with a 64-bit CPU?
+##### 265. How to build an .so binary for a device with a 64-bit CPU?
 ```
 latest version of the NDK (right now it's r10e)
 Application.mk
 APP_ABI := armeabi arm64-v8a armeabi-v7a x86 mips
 ```
-#####266. Android NDK for x86_64 has no reference for bcopy and index
+##### 266. Android NDK for x86_64 has no reference for bcopy and index
 ```
 You can fix this cleanly with a single line in Application.mk (docs):
 
 APP_CFLAGS += -DSTDC_HEADERS
 ```
-#####267.Error:Execution failed for task ':xxx:processDebugManifest'. > Manifest merger failed : uses-sdk element cannot have a "tools:node" attribute
+##### 267.Error:Execution failed for task ':xxx:processDebugManifest'. > Manifest merger failed : uses-sdk element cannot have a "tools:node" attribute
 ```
 This has been updated to reflect the release of API 21, Lollipop. Be sure to download the latest SDK.
 
@@ -2857,7 +2857,7 @@ fixed the issue.
 ```
 参考[Manifest merger failed : uses-sdk:minSdkVersion 14](http://stackoverflow.com/questions/24438170/manifest-merger-failed-uses-sdkminsdkversion-14)
 
-#####268.Error:(1, 1) A problem occurred evaluating project 'xxx'. > Could not create plugin of type 'LibraryPlugin'.
+##### 268.Error:(1, 1) A problem occurred evaluating project 'xxx'. > Could not create plugin of type 'LibraryPlugin'.
 
 修改了build.gradle中的gradle
 也要修改gradle-wrapper.properties
@@ -2871,7 +2871,7 @@ build.gradle
   distributionUrl=https\://services.gradle.org/distributions/gradle-2.4-all.zip
 ```
 
-#####269.androidstudio  Building Apps with Over 65K Methods
+##### 269.androidstudio  Building Apps with Over 65K Methods
 ```java
 android {
     compileSdkVersion 21
@@ -2894,19 +2894,19 @@ dependencies {
 }
 ```
 
-#####270.Caused by: java.lang.NoClassDefFoundError: android.support.v4.util.Pools$SimplePool
+##### 270.Caused by: java.lang.NoClassDefFoundError: android.support.v4.util.Pools$SimplePool
 
 http://stackoverflow.com/questions/25477860/error-inflating-class-android-support-v7-widget-recyclerview
 
 
-#####271.Caused by: java.lang.NoSuchMethodException: <init> [class android.content.Context, interface android.util.AttributeSet]
+##### 271.Caused by: java.lang.NoSuchMethodException: <init> [class android.content.Context, interface android.util.AttributeSet]
 
 http://stackoverflow.com/questions/11753719/how-do-i-properly-extend-a-layout-class
 
-#####272.java.lang.IndexOutOfBoundsException: Inconsistency detected. Invalid view holder adapter positionViewHolder{423a4c60 position=4 id=-1, oldPos=1, pLpos:1 scrap tmpDetached not recyclable(1) no parent}
+##### 272.java.lang.IndexOutOfBoundsException: Inconsistency detected. Invalid view holder adapter positionViewHolder{423a4c60 position=4 id=-1, oldPos=1, pLpos:1 scrap tmpDetached not recyclable(1) no parent}
 
 
-#####273.Failure [INSTALL_PARSE_FAILED_MANIFEST_MALFORMED]
+##### 273.Failure [INSTALL_PARSE_FAILED_MANIFEST_MALFORMED]
 http://stackoverflow.com/questions/6056564/installation-error-install-parse-failed-manifest-malformed
 I was having this error because i had capital letters in my package name like this
 
@@ -2916,9 +2916,9 @@ after i had changed it to something like
 com.example.packagename
 it was solved
 
-#####273.解决异常Circular dependencies cannot exist in RelativeLayout
+##### 273.解决异常Circular dependencies cannot exist in RelativeLayout
 RelativeLayout中存在循环的相关
-#####274.java.lang.ClassNotFoundException   使用MultiDex 后,运行时发现有些crash或者有些类无法调用 报NoClassDefFound error
+##### 274.java.lang.ClassNotFoundException   使用MultiDex 后,运行时发现有些crash或者有些类无法调用 报NoClassDefFound error
 首先正确使用 google的multipartdex
 
 1. 修改Gradle,导入'com.android.support:multidex:1.0.0',打开multiDexEnabled;
@@ -2982,9 +2982,9 @@ public class HelloMultiDexApplication extends Application {
     
 **参考**[Android 分Dex (MultiDex)](http://www.cnblogs.com/wingyip/p/4496028.html)
 
-#####275.Linux 32 Bit Libraries
+##### 275.Linux 32 Bit Libraries
 sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
-#####276.Android Material Design TabLayout.when more than screen width scroll when less than screen width fill
+##### 276.Android Material Design TabLayout.when more than screen width scroll when less than screen width fill
 Android TabLayout,当tab总宽度少于一屏时候,扩展为屏幕宽度展示.当tab总宽度大于一屏时,滚动显示
 
 ```
@@ -3001,7 +3001,7 @@ One possible solution is to set your layout_width to wrap_content and layout_gra
 If the tabs are smaller than the screen width, the TabLayout itself will also be smaller and it will be centered because of the gravity. If the tabs are bigger than the screen width, the TabLayout will match the screen width and scrolling will activate.
 ```
 参考[Android Support Design TabLayout: Gravity Center and Mode Scrollable](http://stackoverflow.com/questions/30616474/android-support-design-tablayout-gravity-center-and-mode-scrollable)
-#####277. android多渠道打包
+##### 277. android多渠道打包
 
 目前采用的方案是，在AndroidManifest.xml文件中配置
 ```java
@@ -3061,7 +3061,7 @@ android {
 参考
 [Gradle实现的两种简单的多渠道打包方法](http://blog.csdn.net/maosidiaoxian/article/details/42000913#comments)
 
-#####278 Tcpdump抓包
+##### 278 Tcpdump抓包
 
 有些模拟器比如genymotion自带了tcpdump，如果没有的话，需要下载tcpdump:
 http://www.strazzere.com/android/tcpdump
@@ -3070,36 +3070,36 @@ http://www.strazzere.com/android/tcpdump
 
 ![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhbiaQSphuqU1CZjc1ZWEp6kdoEffqdITcibXuBwYLia1WiaFf9QribCQT4Nw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-#####279 查看签名
+##### 279 查看签名
 
 很多开发者服务都需要绑定签名信息，用下面的命令可以查看签名：
 
 ![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhlzicAUQfEqy195Q9afEIJug88TwPyI7CcWD0kYuHmG06ApAWGvBUykA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-#####280 系统日志中几个重要的TAG
+##### 280 系统日志中几个重要的TAG
 
 ![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhTcZEgtChM5ibibF6IWTqibOQhGibYiax2kPsJ3hAJSmEDwm1Ps4LRQUbm4Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-#####281 一行居中，多行居左的TextView
+##### 281 一行居中，多行居左的TextView
 
 这个一般用于提示信息对话框，如果文字是一行就居中，多行就居左。
 在TextView外套一层wrap_content的ViewGroup即可简单实现：
 
 ![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhQ9QF3lGJgJ8Ttu7PQqvIOVb4Zlq1CQx9Ht8FEcMquSorIlA5G0AsjQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-#####282 setCompoundDrawablesWithIntrinsicBounds()
+##### 282 setCompoundDrawablesWithIntrinsicBounds()
 
 网上一大堆setCompoundDrawables()方法无效不显示的问题，然后解决方法是setBounds，需要计算大小…
 
 不用这么麻烦，用setCompoundDrawablesWithIntrinsicBounds()这个方法最简单！
 
-#####282 更新媒体库文件
+##### 282 更新媒体库文件
 
 以前做ROM的时候经常碰到一些第三方软件（某音乐APP）下载了新文件或删除文件之后，但是媒体库并没有更新，因为这个是需要第三方软件主动触发。
 
 ![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhszd3YUQSMbnxfibtNiaJQE76ibHvJueicqAnemRQtz8ZI3ohgGM071JQlw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-#####283 Monkey参数
+##### 283 Monkey参数
 
 大家都知道，跑monkey的参数设置有一些要注意的地方，比如太快了不行不切实际，太慢了也不行等等，这里给出一个参考：
 
@@ -3108,7 +3108,7 @@ http://www.strazzere.com/android/tcpdump
 ![](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6QugYfe1LhgQ4ReVVpGYzkhHPJCQdQfobVl1Rx6mCpOSSxdkqkqgrMicialXntLYknTwdDgkRZQykbA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
 
-#####284 强大的dumpsys
+##### 284 强大的dumpsys
 
 dumpsys可以查看系统服务和状态，非常强大，可通过如下查看所有支持的子命令：
 
@@ -3123,7 +3123,7 @@ dumpsys可以查看系统服务和状态，非常强大，可通过如下查看�
 注[278-284来源于]　
 [你应该知道的那些Android小经验](https://mp.weixin.qq.com/s?__biz=MzA4MjU5NTY0NA==&mid=404388098&idx=1&sn=8bbbba7692dca68cdda2212dec4d86c0&scene=1&srcid=0320gXPloap70ixGeYnNUaAW&key=710a5d99946419d972fe638b34e38edcf7064c302f8526f10b927c7e27886585b83b5b60bc342db482d2a7846e24c284&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.11.3+build(15D21)&version=11020201&pass_ticket=pvdhfR4lRer%2FtYDsP5cnFux5OK0GM%2FUQMgt5TOvHlpQ%3D)
 
-#####285. 在布局文件时，在ｘｍｌ可视化文件中看到效果，而又不影响最终展示．可以通过tools来协助
+##### 285. 在布局文件时，在ｘｍｌ可视化文件中看到效果，而又不影响最终展示．可以通过tools来协助
 比如：
 ```java
 <?xml version="1.0" encoding="utf-8"?>
@@ -3155,16 +3155,16 @@ dumpsys可以查看系统服务和状态，非常强大，可通过如下查看�
 加填充xml文件时，TextView是隐藏的，但又想在xml中直观的看到它显示后的整体效果．借助xmlns:tools="http://schemas.android.com/tools" 完美实现．
 
 参考[android中xml tools属性详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0309/2567.html)
-#####286. android studio对于错误拼写/不识别的英文单词，给予波浪提示。
+##### 286. android studio对于错误拼写/不识别的英文单词，给予波浪提示。
 Spellchecker inspection helps locate typos and misspelling in your code, comments and literals, and fix them in one click
 [android studio对于错误拼写/不识别的英文单词，给予波浪提示](http://blog.csdn.net/miyuehu/article/details/44154963)
 选中单词，单击鼠标右键 spelling
 Save ‘xxx’ to dictionary..
-#####287. Warning: Use '$' instead of '.' for inner classes (or use only lowercase letters in package names); replace  .with $ 
+##### 287. Warning: Use '$' instead of '.' for inner classes (or use only lowercase letters in package names); replace  .with $ 
 
 Package names are written in all lower case to avoid conflict with the names of classes or interfaces.
 包名小写,避免和类名或接口名冲突
-#####288. JNI undefined reference to `__android_log_print'
+##### 288. JNI undefined reference to `__android_log_print'
 ```
 android {
     defaultConfig {
@@ -3177,7 +3177,7 @@ android {
 ```
 参考[undefined reference to `__android_log_print'](http://stackoverflow.com/questions/4455941/undefined-reference-to-android-log-print)
 
-#####289. gradle升级到gradle2.10后出现如下问题
+##### 289. gradle升级到gradle2.10后出现如下问题
 
  Error:Execution failed for task ':xxx:packageReleaseResources'.
 > xxxx/res/drawable/data.bin: Error: The file name must end with .xml or .png
@@ -3187,7 +3187,7 @@ Restart Eclipse (unfortunately) and the problem will go away.
 参考[Android: failed to convert @drawable/picture into a drawable](http://stackoverflow.com/questions/8874262/android-failed-to-convert-drawable-picture-into-a-drawable)
 
 
-#####290. No JDK found. Please validate either STUDIO_JDK, JDK_HOME or JAVA_HOME environment variable points to valid JDK installation.
+##### 290. No JDK found. Please validate either STUDIO_JDK, JDK_HOME or JAVA_HOME environment variable points to valid JDK installation.
 
 我安装了android-studio，通过命令行可以启动androidstudio，但是创建启动器后启动失败
 
@@ -3198,7 +3198,7 @@ Restart Eclipse (unfortunately) and the problem will go away.
 用xdg-open xxx.desktop看报错没有
 
 
-#####291. 
+##### 291. 
 $ adb devices
 List of devices attached
 adb server version (32) doesn't match this client (35); killing...
@@ -3217,7 +3217,7 @@ http://blog.csdn.net/wuyuxing24/article/details/45169991
 
 
 
-#####292. 
+##### 292. 
 Error:No cached version of com.android.tools.build:gradle:1.2.3 available for offline mode.
 <a href="toggle.offline.mode">Disable Gradle 'offline mode' and sync project</a>
 
@@ -3226,7 +3226,7 @@ Error:No cached version of com.android.tools.build:gradle:1.2.3 available for of
 2.10.0
 
 
-#####293. 
+##### 293. 
 xxx/IxxxbackService.aidl
 Error:(31) couldn't find import for class com.kugou.common.module.fm.IxxFmPlayStateListener
 Error:(33) couldn't find import for class com.kugou.common.service.ringtone.IxxRingtonePlayStateListener
@@ -3237,7 +3237,7 @@ Error:Execution failed for task ':androidkugou:compileDebugAidl'.
 rebuild
 
 
-#####294.java中 volatile static结合使用
+##### 294.java中 volatile static结合使用
 static 静态
 volatile 不稳定的
 [JAVA 里static 和volatile的区别](http://www.jdon.com/44080)
@@ -3327,12 +3327,12 @@ private class PageChangeListener implements OnPageChangeListener {
 参考[Android viewpager animation](http://stackoverflow.com/questions/10892403/android-viewpager-animation)
 
 
-#####302   Instant Run does not support deploying build variants with multidex enabled, to a target with API level 20 or below. To use Instant Run with a multidex enabled build variant, deploy to a target with API level 21 or higher.");
+##### 302   Instant Run does not support deploying build variants with multidex enabled, to a target with API level 20 or below. To use Instant Run with a multidex enabled build variant, deploy to a target with API level 21 or higher.");
 
 http://stackoverflow.com/questions/36516931/instant-run-disabled-for-multidexed-application
 
 
-#####303  java.util.ConcurrentModificationException  at java.util.LinkedList$LinkIterator.next(LinkedList.java:124)
+##### 303  java.util.ConcurrentModificationException  at java.util.LinkedList$LinkIterator.next(LinkedList.java:124)
 
 linkedlist 不是线程安全的，用ConcurrentLinkedQueue
 参考 [LinkedList多线程不安全的解决办法](http://blog.sina.com.cn/s/blog_56d8ea900100xbht.html)
